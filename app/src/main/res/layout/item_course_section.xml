@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_action_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:background="@color/colorGreen"
+        android:gravity="center"
+        android:minWidth="80dp"
+        android:padding="@dimen/_10dp"
+        android:paddingRight="@dimen/_5dp"
+        android:text="Warm Upd djaGJAGAD jgdADJAD jgdAGJ"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_14sp" />
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_action_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:paddingRight="@dimen/_5dp"
+        android:text="Walk at normal"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_14sp" />
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_action_time"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:background="@color/colorGreen"
+        android:gravity="center"
+        android:padding="@dimen/_10dp"
+        android:paddingRight="@dimen/_5dp"
+        android:text="2 mins"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_14sp" />
+</LinearLayout>

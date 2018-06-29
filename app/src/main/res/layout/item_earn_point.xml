@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10dp">
+
+    <ImageView
+        android:id="@+id/imageView_friend"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@color/colorGreen" />
+
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_toEndOf="@+id/imageView_friend"
+        android:layout_toRightOf="@+id/imageView_friend"
+        android:text="Company Name"
+        android:textColor="@color/colorGreen"
+        android:textSize="@dimen/_15sp" />
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_name"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_toEndOf="@+id/imageView_friend"
+        android:layout_toRightOf="@+id/imageView_friend"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus ante id lectus imperdiet imperdiet. Suspendisse non justo massa. Vivamus mollis lorem consequat, condimentum tellus in, pharetra mauris. Maecenas accumsan, elit nec sagittis pretium, velit sapien posuere nibh, a suscipit orci metus sed dolor. Curabitur leo justo, lobortis sit amet felis non, dapibus elementum nulla. Suspendisse non posuere eros. Duis faucibus vel purus a pellentesque. Sed eget aliquet sapien, ut lobortis velit. Phasellus facilisis, lorem at malesuada dapibus, neque sapien imperdiet purus, molestie sodales metus est vitae massa. Phasellus commodo lacus consequat nisi volutpat, eu maximus nulla semper. "
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_10sp" />
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_points"
+        android:layout_width="100dp"
+        android:gravity="center"
+        android:background="@color/colorGreen"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_desc"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_toEndOf="@+id/imageView_friend"
+        android:layout_toRightOf="@+id/imageView_friend"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
+        android:text="Earn 25 points"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_10sp" />
+</RelativeLayout>

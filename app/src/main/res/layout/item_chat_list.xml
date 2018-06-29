@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10dp">
+
+    <com.trailaider.app.ui.custom.CircleImageView
+        android:id="@+id/imageView_other"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@color/colorGreen" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView_other"
+        android:layout_toRightOf="@+id/imageView_other"
+        android:background="@drawable/chat_bg"
+        android:orientation="vertical">
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_message_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:padding="@dimen/_10dp"
+            android:text="Message"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14sp" />
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_message_other"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginRight="@dimen/_10dp"
+            android:text="Time"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_11sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

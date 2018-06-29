@@ -1,0 +1,24 @@
+<android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorDarkGray"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="TRAILLAIDER"
+        android:textColor="@color/colorWhite"/>
+    <ImageView
+        android:layout_gravity="right"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_notification"
+        android:layout_height="match_parent" />
+</android.support.v7.widget.Toolbar>

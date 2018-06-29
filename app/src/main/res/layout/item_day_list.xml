@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10dp"
+        android:text="Day 1"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGray" />
+
+    <LinearLayout
+        android:id="@+id/layout_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F3F3F3"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_15dp">
+
+        <com.trailaider.app.ui.custom.TextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10dp"
+            android:text="@string/food_to_eat"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_10dp"
+                android:rotation="180"
+                android:src="@drawable/arrow_right" />
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:minLines="3"
+                android:padding="@dimen/_10dp"
+                android:text="@string/food_to_eat"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_10dp"
+                android:src="@drawable/arrow_right" />
+        </LinearLayout>
+
+        <com.trailaider.app.ui.custom.TextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10dp"
+            android:text="@string/exercise_to_do"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_10dp"
+                android:rotation="180"
+                android:src="@drawable/arrow_right" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10dp">
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:id="@+id/textView_session_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_button"
+                        android:padding="@dimen/_10dp"
+                        android:text="Walking"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_14sp" />
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:id="@+id/textView_session_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/_10dp"
+                        android:background="@drawable/bg_button"
+                        android:padding="@dimen/_10dp"
+                        android:text="Session 2"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_14sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_10dp"
+                android:src="@drawable/arrow_right" />
+        </LinearLayout>
+
+        <com.trailaider.app.ui.custom.TextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10dp"
+            android:text="@string/say_no"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_10dp"
+                android:rotation="180"
+                android:src="@drawable/arrow_right" />
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:minLines="3"
+                android:padding="@dimen/_10dp"
+                android:text="@string/food_to_eat"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_10dp"
+                android:src="@drawable/arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

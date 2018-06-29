@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layout_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@+id/toolbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20dp">
+
+
+                <com.trailaider.app.ui.custom.CircleImageView
+                    android:id="@+id/imageView_friend"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/colorLightGray" />
+
+                <com.trailaider.app.ui.custom.TextViewBold
+                    android:id="@+id/textView_count_mutual"
+                    android:layout_width="@dimen/_30dp"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/_10dp"
+                    android:background="@drawable/circle_green"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_14sp" />
+            </RelativeLayout>
+
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10dp"
+                android:gravity="center"
+                android:text="User Name"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="16sp" />
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_name"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="User Name"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_city"
+                android:layout_marginTop="@dimen/_20dp"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/_10dp"
+                android:paddingRight="@dimen/_10dp">
+
+                <com.trailaider.app.ui.custom.ButtonReguler
+                    android:id="@+id/button_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_corner_gray"
+                    android:text="@string/message" />
+
+                <com.trailaider.app.ui.custom.ButtonReguler
+                    android:id="@+id/button_add_friend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_corner_gray"
+                    android:text="@string/add_friend" />
+            </LinearLayout>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/layout_btn"
+                android:layout_marginTop="@dimen/_10dp"
+                app:tabBackground="@color/colorDarkGray"
+                app:tabIndicatorColor="@color/colorGreen"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/colorWhite"
+                app:tabTextColor="@color/colorWhite">
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tab_item1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="303 Friend" />
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tab_item2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 Mutual Friend" />
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tab_item3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Treks" />
+            </android.support.design.widget.TabLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@+id/tab_layout"
+                android:id="@+id/recycler_view"
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_below="@+id/tab_layout"
+                android:id="@+id/recycler_view_trek"
+                android:visibility="gone"
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

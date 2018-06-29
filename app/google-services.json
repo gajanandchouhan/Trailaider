@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "91921997232",
+    "project_id": "trailaider"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91921997232:android:7c36cb8749effa0a",
+        "android_client_info": {
+          "package_name": "com.trailaider.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91921997232-kvpc3gbaovaso77vfd194f2fim0psvio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trailaider.app",
+            "certificate_hash": "b3d1f9ba1393af118b08becbb34ba1c40d993c73"
+          }
+        },
+        {
+          "client_id": "91921997232-ulauugth37e5ogr2ie4t95v5jahci00k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfN7UkqxjGDa6Lr0Nn7f1TeNdj7oCVp9E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

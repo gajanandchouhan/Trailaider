@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:padding="@dimen/_10dp">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_15sp" />
+
+        <com.trailaider.app.ui.custom.TextViewBold
+            android:id="@+id/textView_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_toLeftOf="@+id/rating_bar"
+            android:layout_toStartOf="@+id/rating_bar"
+            android:text="5.0"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_15sp" />
+
+        <android.support.v7.widget.AppCompatRatingBar
+            android:id="@+id/rating_bar"
+            style="@style/RatingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:isIndicator="true"
+            android:rating="5" />
+
+
+    </RelativeLayout>
+
+    <com.trailaider.app.ui.custom.TextViewBold
+        android:id="@+id/textView_review"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout"
+        android:layout_marginRight="@dimen/_5dp"
+        android:layout_toLeftOf="@+id/textView_review_count"
+        android:layout_toStartOf="@+id/textView_review_count"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et pulvinar leo. Nullam quis lacus vitae turpis suscipit facilisis sed et velit. Cras fringilla erat magna, id iaculis neque ornare vel. Vivamus posuere tristique fringilla. Nam mattis tempus diam, ac posuere velit cursus et. Donec posuere, nibh quis convallis mollis, velit erat mollis risus, tempus lobortis nibh felis sit amet est. Curabitur"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_15sp"
+        android:textStyle="italic" />
+
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_review_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/layout"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="1 User"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_15sp"
+        android:textStyle="italic" />
+
+    <com.trailaider.app.ui.custom.TextViewBold
+        android:id="@+id/textView_readmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView_review"
+        android:text="Read More"
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/_15sp" />
+
+</RelativeLayout>

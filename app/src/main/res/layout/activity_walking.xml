@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_week_day"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30dp"
+                android:background="@color/colorGreen"
+                android:gravity="center"
+                android:text="@string/generate_new_course"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/images"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:background="@color/colorDarkGraySemiTrans"
+                    android:padding="@dimen/_5dp">
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5dp"
+                        android:text="Distance"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/_14sp" />
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:id="@+id/textView_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="@dimen/_5dp"
+                        android:text="00.00 Km"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/_14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:background="@color/colorDarkGraySemiTrans"
+                    android:padding="@dimen/_5dp">
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5dp"
+                        android:text="Duration"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/_14sp" />
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:id="@+id/textView_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="@dimen/_5dp"
+                        android:text="00:00 Mins"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/_14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:background="@color/colorDarkGraySemiTrans"
+                    android:padding="@dimen/_5dp">
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5dp"
+                        android:text="Average Pace"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/_14sp" />
+
+                    <com.trailaider.app.ui.custom.TextViewReguler
+                        android:id="@+id/textView_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="@dimen/_5dp"
+                        android:text="00:00 m/min"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/_14sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_begin"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="@dimen/_60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_25dp"
+                android:background="@drawable/circle_green"
+                android:gravity="center"
+                android:text="BEGIN"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_14sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <com.trailaider.app.ui.custom.TextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tips"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_16sp" />
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15dp"
+                android:layout_marginRight="@dimen/_15dp"
+                android:text="Tips"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layout_count_down"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AD000000"
+        android:visibility="gone">
+
+        <com.trailaider.app.ui.custom.TextViewBold
+            android:id="@+id/textView_count_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="3"
+            android:textColor="@color/colorWhite"
+            android:textSize="150sp" />
+    </RelativeLayout>
+</RelativeLayout>

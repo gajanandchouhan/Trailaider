@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10dp">
+
+    <ImageView
+        android:id="@+id/imageView_friend"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerCrop"
+        android:src="@color/colorGreen" />
+
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView_friend"
+        android:layout_toRightOf="@+id/imageView_friend"
+        android:text="Friend Name"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_15sp" />
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_name"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_toEndOf="@+id/imageView_friend"
+        android:layout_toRightOf="@+id/imageView_friend"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Hii dude"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_15sp" />
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_time"
+        android:paddingLeft="@dimen/_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="time"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_15sp" />
+</RelativeLayout>

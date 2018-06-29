@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+   >
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Week 1"
+        android:padding="@dimen/_10dp"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorLightGray"
+        android:layout_height="1dp"/>
+</LinearLayout>

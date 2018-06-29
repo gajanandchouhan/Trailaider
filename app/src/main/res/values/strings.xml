@@ -1,0 +1,266 @@
+<resources>
+
+    <string name="facebook_app_id">1974447829483074</string>
+    <string name="fb_login_protocol_scheme">fb1974447829483074</string>
+
+    <string name="app_name">Trailaider</string>
+    <string name="f_name">First Name</string>
+    <string name="lst_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="city">City</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="an_existing_account">An Existing Account&#160;</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="help">Help</string>
+    <string name="google">Google+</string>
+    <string name="facebook">Facebook</string>
+    <string name="submit">Submit</string>
+    <string name="no_internet">Network error, please connect to internet.</string>
+    <string name="email_mobile">Email/Mobile Number</string>
+    <string name="enter_otp">Enter Verification Code</string>
+    <string name="units">Units-Imperial/Metric</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="dob">D.O.B</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="enter_firstname">Please enter first name.</string>
+    <string name="enter_email">Please enter email.</string>
+    <string name="enter_confrim_pass">Please enter confirm password.</string>
+    <string name="password_length">Password lenght should be minimum 6 chars.</string>
+    <string name="password_validation">Password should contains at least one capital latter and one special character.</string>
+    <string name="enter_mobile_number">Please enter mobile number.</string>
+    <string name="enter_city">Please enter city.</string>
+    <string name="enter_pincode">Please enter pincode.</string>
+    <string name="password_not_match">Password not matching.</string>
+    <string name="enter_email_valid">Please enter a valid email.</string>
+    <string name="enter_valid_mobile_number">Please enter a valid mobile number.</string>
+    <string name="enter_password">Please enter password.</string>
+    <string name="select_unit">Please select unit.</string>
+    <string name="enter_height">Please ente height.</string>
+    <string name="enter_weight">Please enter weight.</string>
+    <string name="select_dob">Please select date of birth.</string>
+    <string name="camera">Camera</string>
+    <string name="enter_email_mobile">Please enter email or mobile number.</string>
+    <string name="gallery">Gallery</string>
+    <string name="server_error">Something went wrong, please try again later.</string>
+    <string name="myprofile">My Profile</string>
+    <string name="my_points">My Points</string>
+    <string name="myrank">My Rank</string>
+    <string name="inbox">Inbox</string>
+    <string name="friends">Friends</string>
+    <string name="setting">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="search_review">SEARCH YOUR REVIEWS</string>
+    <string name="search_trek">SEARCH YOUR TREK</string>
+    <string name="submit_trek">SUBMIT TREK</string>
+    <string name="trek_name">TREK NAME</string>
+    <string name="trek_type">TREK TYPE</string>
+    <string name="trek_duration">TREK DURATION</string>
+    <string name="trek_height">TREK HEIGHT</string>
+    <string name="upload_gps_loc">UPLOAD GPS LOCATION</string>
+    <string name="solo">Solo</string>
+    <string name="with_friends">With Friends</string>
+    <string name="company">Company</string>
+    <string name="enter_company_name">Enter Company Name</string>
+    <string name="done">Done</string>
+    <string name="select_type">Please select trek type.</string>
+    <string name="gender">Gender</string>
+    <string name="enter_trek_name">Please enter trek name.</string>
+    <string name="select_trek_type">Please select trek type.</string>
+    <string name="enter_trek_duration">Please select trek duration.</string>
+    <string name="enter_trek_height">Please enter trek height.</string>
+    <string name="submit_review">SUBMIT REVIEW</string>
+    <string name="product_trek_gear">Product/Gear/Trek Name</string>
+    <string name="write_review">WRITE REVIEW</string>
+    <string name="url_paste">PASTE A URL</string>
+    <string name="enter_review_name">Please enter name.</string>
+    <string name="enter_review_desc">Please enter review description.</string>
+    <string name="enter_url">Please enter a url.</string>
+    <string name="view_profile">View Profile</string>
+    <string name="about_me">About Me</string>
+    <string name="notification">Notification</string>
+    <string name="privacy_settings">Privacy Settings</string>
+    <string name="friends_tagging">Friends Tagging</string>
+    <string name="terms_of_use">Terms Of Use</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="faqs">FAQs</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="select_gender">Please select gender.</string>
+    <string name="pending">Pending</string>
+    <string name="aproved">Approved</string>
+    <string name="service_not_available">Service not available.</string>
+    <string name="invalid_lat_long_used">Invalid latitude logitude.</string>
+    <string name="no_address_found">Address not found</string>
+    <string name="location_not_match">Trek not matching with your current location.</string>
+    <string name="error_location">Something went wrong, Please check you GPS settings.</string>
+    <string name="trek_added_success">Trek added successfully.</string>
+    <string name="select_mage">Please select at least one image.</string>
+    <string name="message">Message</string>
+    <string name="add_friend">Add Friend</string>
+    <string name="generate_course">GENERATE COURSE</string>
+    <string name="generate_new_course">GENERATE A NEW COURSE</string>
+    <string name="your_info">YOUR INFO</string>
+    <string name="age">AGE</string>
+    <string name="height_caps">HEIGHT</string>
+    <string name="weight_caps">WEIGHT</string>
+    <string name="trek_info">TREK INFO</string>
+    <string name="duration">DURATION</string>
+    <string name="course_duration">COURSE DURATION</string>
+    <string name="_3_weeks">3 WEEKS</string>
+    <string name="_6_weeks">6 WEEKS</string>
+    <string name="_9_weeks">9 WEEKS</string>
+    <string name="enter_age">Please enter age.</string>
+    <string name="my_course">My Course</string>
+    <string name="food_to_eat">Food to eat</string>
+    <string name="exercise_to_do">Exercise to do</string>
+    <string name="say_no">Say no to</string>
+    <string name="submit_rating">Please submit any rating.</string>
+    <string name="send">Send</string>
+
+    <string name="tc_text">Trailaider Terms of Use\n\nPlease read these terms of use carefully before using this
+PLATFORM.
+By accessing or using this website, mobile application or other Trailaider product or service (collectively the "Platform") on any computer, mobile phone, tablet, console or other device (collectively, "Device"), you indicate that you have read, understand and agree to be bound by these Terms of Use and any other applicable law, whether or not you are a registered member of TRAILAIDER. TRAILAIDER may change these Terms of Use at any time without notice, effective upon its posting to the Platform. Your continued use of the Platform shall be considered your acceptance to the revised Terms of Use. If you do not agree to these Terms of Use, please do not use this Platform.\n\nIMPORTANT NOTICE FOR AMATEUR TREKKERS
+YOU ARE RESPONSIBLE FOR ENSURING THAT YOUR USE OF OR PARTICIPATION IN THE COURSES OF THIS PLATFORM DOES NOT AFFECT YOUR ELIGIBILITY AS AN AMATEUR TREKKER. TRAILAIDER IS NOT RESPONSIBLE OR LIABLE FOR YOUR USE OF THE PLATFORM RESULTING IN YOUR INELIGIBILITY AS AN AMATEUR TREKKER.
+PHYSICAL ACTIVITY NOTICE
+The Platform may include features that promote physical activity. Consider the risks involved and consult with your medical professional before engaging in any physical activity. TRAILAIDER is not responsible or liable for any injuries or damages you may sustain that result from your use of, or inability to use, the features of the Platform.
+INTELLECTUAL PROPERTY
+All intellectual property on the Platform (except for User Generated Content) is owned by TRAILAIDER or its licensors, which includes materials protected by copyright, trademark, or patent laws. All trademarks, service marks and trade names (e.g., the TRAILAIDER name and the Swoosh design) are owned, registered and/or licensed by TRAILAIDER All content on the Platform (except for User Generated Content), including but not limited to text, software, scripts, code, designs, graphics, photos, sounds, music, videos, applications, interactive features and all other content ("Content") is a collective work under the copyright laws and is the proprietary property of TRAILAIDER; All rights reserved.
+PLATFORM USE RESTRICTIONS
+You may use the Content only for your own non-commercial use to participate in the Platform or to place an order or purchase TRAILAIDER products. You agree not to change or delete any ownership notices from materials downloaded or printed from the Platform. You agree not to modify, copy, translate, broadcast, perform, display, distribute, frame, reproduce, republish, download, display, post, transmit or sell any Intellectual Property or Content appearing on the Platform, including User Generated Content (defined below), without TRAILAIDER\'s prior written consent, unless it is your own User Generated Content that you legally post on the Platform. You agree not to use any data mining, robots, scraping or similar data gathering methods. Nothing in these Terms of Use shall be interpreted as granting any license of intellectual property rights to you.
+PRODUCT ORDERS
+All orders placed through the Platform are subject to TRAILAIDER\'s acceptance. This means that TRAILAIDER may refuse to accept or may cancel any order, whether or not the order has been confirmed, for any or no reason, and without liability to you or anyone else. If your credit card has already been charged for an order that is later cancelled, TRAILAIDER will issue you a refund.
+SAFEGUARD YOUR USERNAME/PASSWORD
+You are responsible for any actions that take place while using your TRAILAIDER account. Keep your username/password secure and do not allow anyone else to use your username/password to access the Platform. TRAILAIDER is not responsible for any loss that results from the unauthorized use of your username/password, with or without your knowledge.\nUSER GENERATED CONTENT
+"User Generated Content" is communications, materials, information, data, opinions, photos, profiles, messages, notes, website links, text information, music, videos, designs, graphics, sounds, and any other content that you and/or other Platform users post or otherwise make available on or through the Platform, except to the extent the Content is owned by TRAILAIDER.
+POSTING RULES: USER GENERATED CONTENT AND USER CONDUCT
+BE RESPONSIBLE
+You are solely responsible for your User Generated Content, your interactions with other users and your activity on the Platform. Do not take any action or post anything that may expose TRAILAIDER or its users to any harm or liability of any type.
+BE RELEVANT AND CONSTRUCTIVE
+Stay on topic and post only constructive comments and questions. Unless the Platform feature asks for it, don\'t talk about policies, future products, speculations or rumors about TRAILAIDER and TRAILAIDER products, or anything else off topic.
+BE COURTEOUS AND APPROPRIATE
+Flaming and insults are prohibited. Do not post User Generated Content, or a link to a website, that, in TRAILAIDER\'s sole discretion, is illegal, offensive, libelous, defamatory, infringing, inflammatory, deceptive, inaccurate, misleading, malicious, fraudulent, false, indecent, harmful, harassing, intimidating, threatening, hateful, abusive, vulgar, obscene, pornographic, violent, sexually explicit, invasive of privacy, offensive in a sexual, racial, cultural, or ethnic context, will harm or threaten the safety of others, or is otherwise objectionable. Do not post photos or videos of another person without that person\'s consent. Do not "stalk," intimidate, abuse, harm or harass another Platform user or person.
+BE YOURSELF\nDo not impersonate any person or entity, including without limitation Trekkers or TRAILAIDER employees. Do not misrepresent yourself, your age or your affiliation with any person or entity. Do not register for more than one TRAILAIDER account, register a TRAILAIDER account on behalf of another individual, group or entity, or sell or transfer your profile or account. Do not use or attempt to use another person\'s account, username or password.
+
+BE ORIGINAL
+You promise that you own or control all rights in any User Generated Content that you post on the Platform. You are responsible for ensuring that any User Generated Content that you post does not, and will not, infringe or violate anyone else\'s rights, including copyright, trademark, patent, trade secret, privacy. You promise not to submit User Generated Content unless you are the owner or have permission from the owner to post such User Generated Content and grant TRAILAIDER all of the license rights granted in these Terms of Use.
+BE LEGAL
+Do not post any User Generated Content, take any action or use the Platform in a way that violates any law, would create liability or promotes illegal activities. Do not take any action on the Platform designed to interfere, disrupt, damage, disable, overburden or limit the functionality of any computer software or hardware, telecommunications equipment or the Platform. Do not post User Generated Content that contains software viruses, programs or other computer code. Do not circumvent or modify any Platform security technology or software.
+GENERAL RULES FOR USER GENERATED CONTENT
+CONTENT IS NOT PRESCREENED
+TRAILAIDER does not prescreen User Generated Content. TRAILAIDER does not guarantee the Platform will be free from User Generated Content that is inaccurate, deceptive, offensive, threatening, defamatory, unlawful or otherwise objectionable. TRAILAIDER is merely acting as a passive channel for such distribution and is not undertaking any obligation or liability relating to any User Generated Content or activities of users on the Platform. Even in the event TRAILAIDER chooses to monitor any User Generated Content, TRAILAIDER assumes no responsibility for, or any obligation to monitor or remove, such User Generated Content. TRAILAIDER reserves the right to edit, remove, or refuse to post any User Generated Content or terminate your registered account for any reason.
+ELIGIBILITY AND REGISTRATION
+To become a member of the TRAILAIDER Platform, or post User Generated Content, you may be required to register for an account. You agree to provide accurate and current information about yourself in all registration forms on the Platform. This Platform is intended solely for users who are thirteen (13) years of age or older and it is a violation of these Terms of Use for anyone under 13 to register for the Platform. You represent and warrant that you are 13 or older. Your account may be deleted without warning if you misrepresent your age, whether older or younger.
+TRAILAIDER'S RIGHTS TO YOUR POSTING
+Your User Generated Content is not confidential or proprietary. You grant, and warrant that you have the right to grant, to TRAILAIDER a non-exclusive, non-revocable, worldwide, transferable, royalty-free, perpetual right to use your User Generated Content in any manner or media now or later developed, for any purpose, commercial, advertising, or otherwise, including the right to translate, display, reproduce, modify, create derivative works, sublicense, distribute, assign and commercialize without any payment due to you.
+COPYRIGHT INFRINGEMENT COMPLAINTS
+If you believe that your work has been improperly copied and posted on the Platform, such that it constitutes infringement, please provide us with the following information: (1) name, address, telephone number, email address and an electronic or physical signature of the copyright owner or of the person authorized to act on his/her behalf; (2) a description of the copyrighted work that you claim has been infringed; (3) a description of where on the Platform the material that you claim is infringing is located; (4) a written statement that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; and (5) a statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf. These requirements must be followed to give TRAILAIDER legally sufficient notice to TRAILAIDER of infringement. Send copyright infringement complaints to TRAILAIDER:
+We suggest that you consult your legal advisor before filing a notice with TRAILAIDER's copyright agent, because there may be penalties for false claims.
+
+LINKS
+The Platform may contain links to websites, applications or other products or services operated by other companies ("Third Party Platforms"). TRAILAIDER does not endorse, monitor or have any control over these Third Party Platforms, which have separate terms of use and privacy policies. TRAILAIDER is not responsible for the content or policies of Third Party Platforms and you access such Third Party Platforms at your own risk.
+MOBILE SERVICES
+The Platform contains services and features that are available to certain mobile Devices. Your carrier's normal rates and fees apply. Not all mobile services will work with all carriers or Devices. By using TRAILAIDER's mobile services, you agree that we may communicate with you by electronic means to your mobile Device and that certain information about your use of these services may be shared with us. If you change or deactivate your mobile phone number, you must promptly update your account information to ensure that we don't send your messages to a different person.
+INDEMNIFICATION
+You agree to indemnify, defend, and hold harmless TRAILAIDER, Inc, its affiliates, officers, directors, employees, agents, licensors and suppliers from and against all claims, losses, liabilities, expenses, damages and costs, including, without limitation, attorneys' fees, arising from or relating in any way to your User Generated Content, your use of Content, your use of the Platform, your conduct in connection with the Platform or with other Platform users, or any violation of these Terms of Use, any law or the rights of any third party.
+PRIVACY
+Our Privacy Policy, which is incorporated into these Terms of Use by this reference, further describes the collection and use of information on this Platform.
+USER INTERACTION DISCLAIMER
+You are solely responsible for your interactions with other people, whether online or in person. TRAILAIDER is not responsible or liable for any loss or damage resulting from any interaction with other Platform users, persons you meet through the Platform, or persons who find you because of information posted on, by or through the Platform. You agree to take reasonable precautions in all interactions with other users on the Platform, and conduct any necessary investigation before meeting another person. TRAILAIDER is under no obligation to become involved with any user dispute, but may do so at its own discretion.
+WARRANTY DISCLAIMER
+TRAILAIDER is not responsible or liable for any User Generated Content or other Content posted on the Platform or for any offensive, unlawful or objectionable content you may encounter on or through the Platform. The Platform, User Generated Content, Content, and the materials and products on this Platform are provided "AS IS" and without warranties of any kind. To the fullest extent permitted by law, TRAILAIDER disclaims all warranties, express or implied, including, but not limited to, implied warranties of title, merchantability, fitness for a particular purpose and non-infringement. TRAILAIDER cannot guarantee and does not promise any specific results from use of the Platform. TRAILAIDER does not represent or warrant that the Platform will be uninterrupted or error-free, that any defects will be corrected, or that this Platform or the server that makes the Platform available are free of viruses or anything else harmful. To the fullest extent permitted by law, TRAILAIDER does not make any warranties or representations regarding the use of the materials or Content in the Platform in terms of their correctness, accuracy, adequacy, usefulness, reliability or otherwise. You understand and agree that you download or otherwise obtain Content at your own risk, and that you will be solely responsible for your use and any damage to your mobile Device, computer system or other Device in which you access the Platform, loss of data or other harm of any kind that may result. TRAILAIDER reserves the right to change any and all Content and other items used or contained in the Platform at any time without notice. Some states do not permit limitations or exclusions on warranties, so the above limitations may not apply to you.
+LIMITATION OF LIABILITY
+TRAILAIDER SHALL NOT BE LIABLE FOR ANY DIRECT, SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES, INCLUDING FOR ANY LOST PROFITS OR LOST DATA, THAT RESULT FROM THE USE OF, OR THE INABILITY TO USE, THIS PLATFORM OR THE PERFORMANCE OF THE PRODUCTS PURCHASED THROUGH THE PLATFORM OR THE CONDUCT OF OTHER PLATFORM USERS (WHETHER ONLINE OR OFFLINE) OR ATTENDANCE AT A TRAILAIDER EVENT OR ANY USER GENERATED CONTENT, EVEN IF TRAILAIDER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOU ASSUME TOTAL RESPONSIBILITY FOR YOUR USE OF THE PLATFORM. YOUR ONLY REMEDY AGAINST TRAILAIDER FOR USE OF THE PLATFORM OR ANY CONTENT IS TO STOP USING THE PLATFORM. THAT SAID, IF TRAILAIDER IS FOUND TO BE LIABLE TO YOU FOR ANY DAMAGE OR LOSS WHICH IS IN ANY WAY CONNECTED WITH YOUR USE OF THIS PLATFORM OR ANY CONTENT, TRAILAIDER'S LIABILITY SHALL NOT EXCEED US$100.00. APPLICABLE LAW MAY NOT ALLOW THE LIMITATION OR EXCLUSION OF LIABILITY OR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU.
+
+SEVERABILITY
+If any provision in these Terms of Use is held invalid, the remainder of these Terms of Use shall continue to be enforceable. If any provision in these Terms of Use is deemed unlawful, void or unenforceable, then that provision is deemed severable from these Terms of Use and the remaining provisions are still valid and enforceable.
+TERMINATION
+TRAILAIDER reserves the right in its sole discretion to terminate your account, delete your profile and any of your User Generated Content, and restrict your use of all or any part of the Platform for any or no reason, without notice, and without liability to you or anyone else. TRAILAIDER also reserves the right to block users from certain IP addresses or Device numbers and prevent access to the Platform. You understand and agree that some of your User Generated Content, such as that which is displayed outside your profile, in activity feeds, in other parts of the Platform, or on other platforms (e.g., Facebook, Twitter, Google, etc), may continue to appear on the Platform or on other platforms even after your User Generated Content is removed or your account is terminated. These Terms of Use remain in effect even after your account is terminated. The Terms of Use relating to Intellectual Property, Indemnification, User Interaction Disclaimer, Warranty Disclaimer, Limitation of Liability, Miscellaneous, Severability and terms that by their nature may survive termination shall survive any termination.
+</string>
+    <string name="pp">TRAILAIDER Digital Privacy Policy
+Effective January 1, 2018
+This TRAILAIDER Digital Privacy Policy (INDIA) ("Privacy Policy") describes how we collect and use your information through a variety of digital means. By accessing or using this website, mobile application or other TRAILAIDER product or service on any computer, mobile phone, tablet, console or other device (collectively, "Device"), you consent to our Privacy Policy. TRAILAIDER may modify this Privacy Policy at any time effective upon its posting. Your continued use of our products and services constitutes your acceptance to this Privacy Policy and any updates.
+While this Privacy Policy is intended to generally describe our privacy practices, our goal is to also provide more detailed information at times when it\'s most meaningful to you. Please look for these notices within our TRAILAIDER services.
+COLLECTING INFORMATION
+WHAT YOU GIVE US
+We collect information you give us or permit us to access. Information may include, but is not limited to, your name, image, birth date, email and physical address, telephone number, gender, contact lists, social media information and profile, location (GPS) information, activity and performance information, and when necessary, credit card information.
+WHAT WE COLLECT FROM YOU
+We may automatically collect information regarding your interaction with, and use of, our products and services. Information we may collect includes, but is not limited to, your telephone number, Device identifier and hardware information, IP address, browser type and language, cookie information, system type, whether you have enabling software to access certain features, access times, referring website URLs, information about your purchases and other information about your interactions with us.
+WHAT WE COLLECT FROM OTHER TRAILAIDER INTERACTIONS AND THIRD PARTIES
+We may combine information you give us with other information from TRAILAIDER sources, transactions and communications. This may include, but is not limited to, information from TRAILAIDER stores, direct mail, catalogs, events, products and applications, or other TRAILAIDER interactions. We may also combine that information with data that is publicly available and data from third parties. We also collect information about gift recipients provided by the giver.
+CHILDREN\'S PRIVACY
+We do not knowingly collect or solicit personal information from children under 13.
+USING INFORMATION
+We may use your information to do the following:
+ENABLE YOUR USE
+Enhance, customize and personalize your TRAILAIDER experiences and communications
+Use TRAILAIDER features, such as trek courses, reviews, treks, registrations, placing an order and other activities
+ 
+OPERATE, IMPROVE AND ANALYZE
+Operate, provide, improve and maintain TRAILAIDER\'s products and services, including analyzing user behavior and trends
+Send you administrative messages and other information about TRAILAIDER. Communicate with you about your purchase, account information or customer service
+ 
+PROVIDE AND CONDUCT MARKETING AND PROMOTIONS
+Communicate with you about our products, services and events, and for other promotional purposes
+Administer contests, promotions, events, surveys or other features
+Display relevant marketing to you
+ 
+SHARING INFORMATION
+TRAILAIDER FAMILY
+We may provide your information to TRAILAIDER, PRIVATE LIMITED. companies and affiliates, ("TRAILAIDER Family").
+SERVICE PROVIDERS
+We may transfer your information to TRAILAIDER Family service providers to conduct our business. For example, they may handle credit card processing, shipping, data management, email distribution, market research, information analysis, and promotions management. We may also share your information to administer features.
+BY LAW OR TO PROTECT RIGHTS
+We may disclose information upon governmental request, in response to a court order, when required by law, to enforce our policies, or to protect our or others\' rights, property or safety. We may share information to prevent illegal uses of TRAILAIDER's products and services or violations of the Terms of Use, or to defend ourselves against third-party claims. We may also share information with companies assisting in fraud protection or investigation.
+BUSINESS TRANSFERS
+Your information may be transferred to a third party as a part of our business assets in a sale of a part or all of TRAILAIDER. If this should happen, notice will be provided by posting to the website or other form of communication.
+PUBLIC SHARING
+DEFAULT SHARING
+When you join or use certain services, you agree to publicly share a basic amount of information, which may include your username, city location, and profile picture.
+SHARING YOU CHOOSE
+You may choose to share certain information. In order to participate in certain features, you may have to adjust your privacy settings and share more information. You may also choose to share your activity on other platforms, such as Facebook and Twitter. Please read the privacy policies of those platforms, because your TRAILAIDER activity published on those platforms will no longer be governed by TRAILAIDER's Privacy Policy.
+TRAILAIDER SHARING
+Information that is publicly shared may be used by TRAILAIDER for promotional purposes.
+PROTECTING INFORMATION
+Security Measures: We use a variety of security measures, including encryption and authentication tools, to help protect your information. We use secure servers when you place orders. All credit card information you supply is transmitted via Secure Socket Layer (SSL) technology and then encrypted within our databases.
+NO GUARANTEE
+However, like other companies, TRAILAIDER cannot guarantee 100% the security or confidentiality of the information you provide to us.
+COLLECTION TOOLS
+HOW WE COLLECT INFORMATION
+TRAILAIDER automatically collects information within our products and services or stored by your browser or Device. We use a variety of methods to collect this information, including, but not limited to, cookies and pixel tags/web beacons ("Collection Tools").
+TURNING OFF COLLECTION TOOLS
+If you turn off certain Collection Tools, you may not have access to many features that make your experience more efficient and some of our services and features may not function properly. Note that our websites may not recognize or respond to Do Not Track (DNT) headers from web browsers.
+THIRD PARTY TRACKING
+We also work with other companies who use tracking technologies to serve ads on our behalf across the Internet. These companies may collect information about your interaction with us, including advertising. These companies may not recognize or respond to DNT headers from web browsers.
+CHOICES
+MODIFYING OR DELETING YOUR INFORMATION
+You can modify or delete your profile within certain TRAILAIDER services, through your account. Your information previously posted may still be publicly viewable. TRAILAIDER may keep information and content in our backup files and archives.
+COMMUNICATION/UNSUBSCRIBE/OPT-OUT
+Regardless of the settings you select, TRAILAIDER may send you service-related communications. To unsubscribe and stop receiving messages, please change your settings or follow the instructions in the email, text message, notification or other message type. If you have unsubscribed from any TRAILAIDER communications, due to production schedules, you may receive communications already in production.
+INTERNATIONAL USERS
+Our digital operations are conducted, in whole or in part, in India. Regardless of where you live, you consent to have your personal data transferred, processed and stored in India, and allow TRAILAIDER to use and collect your personal information in accordance with this Privacy Policy.
+TERMS OF USE
+Your use of our products and services, and any disputes arising from them, is subject to this Privacy Policy as well as our Terms of Use. Please visit our Terms of Use which explains other terms governing the use of our products and services.
+For questions or concerns, please contact TRAILAIDER Consumer Services/Privacy,.
+</string>
+    <string name="privacy_setting_text">Your privacy setting applies across all Trailaider app. When you change your setting in one app, it will change in the others.</string>
+    <string name="everyone">Everyone (public)</string>
+    <string name="text_everyone">Everyone on NikePlus can search for you, view your full profile (including your aggregate activity data and shared content), send your friend requests and see your shared activity in the feed. See More</string>
+    <string name="friend_social">Friends (social)</string>
+    <string name="text_friend">Everyone on NikePlus can search for you, view your limited profile (including your aggregate activity data) and send you a friend request. Only your friends an view your profile can see your full profile and see your shared activity in the feed. See More</string>
+    <string name="only_me">Only Me (Private)</string>
+    <string name="text_only_me">Nobody on NikePlus can search for you, view your profile or view your activity. You will not be able to add friendsor engage in social activity. \n\nFriends Tagging (Allow/Don’t Allow) Allow Friend tagging so your friends on Trailaider can tag you in their posts in the review section and in Trek Photos.</string>
+    <string name="registered_email_to_restore_password">Registered email to restore password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="blog">Blogs</string>
+</resources>

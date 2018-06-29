@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.trailaider.app.ui.activity.profile.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_15dp"
+        android:paddingRight="@dimen/_15dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="@dimen/_30dp"
+            android:paddingTop="@dimen/_30dp">
+
+            <ImageView
+                android:id="@+id/imageView_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10dp"
+                android:paddingRight="@dimen/_10dp"
+                android:paddingLeft="@dimen/_10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@android:drawable/ic_menu_edit" />
+
+            <com.trailaider.app.ui.custom.CircleImageView
+                android:id="@+id/image_view_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:src="@color/colorWhite" />
+
+            <ImageView
+                android:id="@+id/image_view_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:src="@android:drawable/ic_menu_camera" />
+        </RelativeLayout>
+
+        <com.trailaider.app.ui.custom.EditTextReguler
+            android:id="@+id/edit_text_fname"
+            style="@style/EditTextStyle"
+            android:hint="@string/f_name"
+            android:inputType="textPersonName|textCapSentences"
+            android:maxLines="1" />
+
+        <com.trailaider.app.ui.custom.EditTextReguler
+            android:id="@+id/edit_text_lastname"
+            style="@style/EditTextStyle"
+            android:layout_marginTop="@dimen/_10dp"
+            android:hint="@string/lst_name"
+            android:inputType="textPersonName|textCapSentences"
+            android:maxLines="1" />
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@drawable/bg_edittext"
+            android:drawableRight="@android:drawable/arrow_down_float"
+            android:hint="@string/units"
+            android:padding="@dimen/_15dp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="@dimen/_15sp" />
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@drawable/bg_edittext"
+            android:drawableRight="@android:drawable/arrow_down_float"
+            android:hint="@string/gender"
+            android:padding="@dimen/_15dp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="@dimen/_15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:orientation="horizontal">
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/edit_text_height"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:hint="@string/height"
+                android:maxLines="1"
+                android:padding="@dimen/_15dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/_15sp" />
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/edit_text_weight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:hint="@string/weight"
+                android:maxLines="1"
+                android:padding="@dimen/_15dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/_15sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@drawable/bg_edittext"
+            android:orientation="horizontal"
+            android:padding="@dimen/_15dp">
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/dob"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/_15sp" />
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="25 year 5 month"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/_10sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <com.trailaider.app.ui.custom.EditTextReguler
+            android:id="@+id/edit_text_city"
+            style="@style/EditTextStyle"
+            android:layout_marginTop="@dimen/_10dp"
+            android:hint="@string/city"
+            android:inputType="textPersonName|textCapSentences"
+            android:maxLines="1" />
+
+        <com.trailaider.app.ui.custom.EditTextReguler
+            android:id="@+id/edit_text_pincode"
+            style="@style/EditTextStyle"
+            android:layout_marginTop="@dimen/_10dp"
+            android:digits="1234567890"
+            android:hint="@string/pin_code"
+            android:imeOptions="actionDone"
+            android:inputType="numberSigned"
+            android:maxLines="1" />
+
+
+        <com.trailaider.app.ui.custom.ButtonReguler
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:background="@drawable/bg_button"
+            android:padding="@dimen/_5dp"
+            android:text="@string/save_changes"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_15sp" />
+    </LinearLayout>
+</ScrollView>

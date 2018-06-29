@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10dp">
+
+    <com.trailaider.app.ui.custom.CircleImageView
+        android:id="@+id/imageView_friend"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@color/colorGreen" />
+
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_toEndOf="@+id/imageView_friend"
+        android:layout_toRightOf="@+id/imageView_friend"
+        android:text="Friend Name"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_name"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_toEndOf="@+id/imageView_friend"
+        android:layout_toRightOf="@+id/imageView_friend">
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_accept"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rounded_corner_gray"
+            android:gravity="center"
+            android:padding="@dimen/_5dp"
+            android:text="@string/accept" />
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_reject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rounded_corner_gray"
+            android:gravity="center"
+            android:padding="@dimen/_5dp"
+            android:text="@string/reject" />
+    </LinearLayout>
+</RelativeLayout>

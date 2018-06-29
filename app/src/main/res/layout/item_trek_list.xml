@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorDarkGray"
+    android:padding="@dimen/_10dp">
+
+    <ImageView
+        android:id="@+id/image_view_trek"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/layout"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@color/colorWhite" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10dp"
+        android:layout_toEndOf="@+id/image_view_trek"
+        android:layout_toRightOf="@+id/image_view_trek"
+        android:orientation="vertical">
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ROOPKUND TREK"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp" />
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="with friends"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/calendar"
+                android:drawablePadding="@dimen/_7dp"
+                android:gravity="center"
+                android:text="6 days"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_ft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:drawableLeft="@drawable/height"
+                android:drawablePadding="@dimen/_10dp"
+                android:gravity="center"
+                android:text="16500 ft."
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_status"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/colorGreen"
+            android:gravity="center"
+            android:text="Pending"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp" />
+    </LinearLayout>
+</RelativeLayout>

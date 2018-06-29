@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.trailaider.app.ui.custom.TextViewReguler
+                android:id="@+id/textView_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10dp"
+                android:text="@string/privacy_setting_text"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_15sp" />
+
+            <com.trailaider.app.ui.custom.TextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10dp"
+                android:text="@string/everyone"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_15sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.trailaider.app.ui.custom.TextViewReguler
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/checkbox_everyone"
+                    android:layout_toStartOf="@+id/checkbox_everyone"
+                    android:layout_marginLeft="@dimen/_10dp"
+                    android:layout_marginRight="@dimen/_10dp"
+                    android:text="@string/text_everyone"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_15sp" />
+
+                <ImageView
+                    android:id="@+id/checkbox_everyone"
+                    android:padding="@dimen/_10dp"
+                    android:src="@drawable/check_box_selector"
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/check_box_selector"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <com.trailaider.app.ui.custom.TextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10dp"
+                android:text="@string/friend_social"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_15sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.trailaider.app.ui.custom.TextViewReguler
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/checkbox_friend"
+                    android:layout_toStartOf="@+id/checkbox_friend"
+                    android:layout_marginLeft="@dimen/_10dp"
+                    android:layout_marginRight="@dimen/_10dp"
+                    android:text="@string/text_friend"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_15sp" />
+
+                <ImageView
+                    android:id="@+id/checkbox_friend"
+                    android:padding="@dimen/_10dp"
+                    android:src="@drawable/check_box_selector"
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/check_box_selector"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+
+            <com.trailaider.app.ui.custom.TextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10dp"
+                android:text="@string/only_me"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_15sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.trailaider.app.ui.custom.TextViewReguler
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/checkbox_me"
+                    android:layout_toStartOf="@+id/checkbox_me"
+                    android:layout_marginLeft="@dimen/_10dp"
+                    android:layout_marginRight="@dimen/_10dp"
+                    android:text="@string/text_only_me"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_15sp" />
+
+                <ImageView
+                    android:id="@+id/checkbox_me"
+                    android:padding="@dimen/_10dp"
+                    android:src="@drawable/check_box_selector"
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/check_box_selector"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

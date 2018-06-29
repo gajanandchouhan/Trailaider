@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aigestudio="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.aigestudio.wheelpicker.WheelPicker
+            android:id="@+id/wheel_height_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            aigestudio:wheel_curved="true"
+            aigestudio:wheel_cyclic="true"
+            aigestudio:wheel_item_text_color="@color/colorLightGray"
+            aigestudio:wheel_item_text_size="24sp"
+            aigestudio:wheel_selected_item_text_color="@color/colorGreen" />
+
+        <com.aigestudio.wheelpicker.WheelPicker
+            android:id="@+id/wheel_height_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            aigestudio:wheel_curved="true"
+            aigestudio:wheel_cyclic="true"
+            aigestudio:wheel_item_text_color="@color/colorLightGray"
+            aigestudio:wheel_item_text_size="24sp"
+            aigestudio:wheel_selected_item_text_color="@color/colorGreen" />
+    </LinearLayout>
+
+    <com.trailaider.app.ui.custom.ButtonReguler
+        android:id="@+id/button_done"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_marginRight="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@drawable/bg_button"
+        android:padding="@dimen/_5dp"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_15sp" />
+</LinearLayout>

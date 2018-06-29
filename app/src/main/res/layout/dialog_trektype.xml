@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:animateLayoutChanges="true">
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_15dp">
+
+        <com.trailaider.app.ui.custom.RadioButtonReguler
+            android:id="@+id/button_solo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:padding="@dimen/_15dp"
+            android:textColor="@color/colorDarkGray"
+            android:text="@string/solo"
+            android:textSize="@dimen/_15sp" />
+
+        <com.trailaider.app.ui.custom.RadioButtonReguler
+            android:id="@+id/button_friend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorDarkGray"
+            android:checked="false"
+            android:padding="@dimen/_15dp"
+            android:text="@string/with_friends"
+            android:textSize="@dimen/_15sp" />
+
+        <com.trailaider.app.ui.custom.RadioButtonReguler
+            android:id="@+id/button_company"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:textColor="@color/colorDarkGray"
+            android:padding="@dimen/_15dp"
+            android:text="@string/company"
+            android:textSize="@dimen/_15sp" />
+    </RadioGroup>
+
+    <com.trailaider.app.ui.custom.EditTextReguler
+        android:id="@+id/edit_text_cmpny"
+        android:layout_below="@+id/radio"
+        android:visibility="gone"
+        style="@style/EditTextStyleGray"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_marginRight="@dimen/_15dp"
+        android:hint="@string/enter_company_name"
+        android:inputType="textPersonName|textCapSentences"
+        android:maxLines="1" />
+
+    <com.trailaider.app.ui.custom.ButtonReguler
+        android:id="@+id/button_done"
+        android:layout_below="@+id/edit_text_cmpny"
+        android:layout_marginRight="@dimen/_15dp"
+        android:layout_marginLeft="@dimen/_15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@drawable/bg_button"
+        android:padding="@dimen/_5dp"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_15sp" />
+</RelativeLayout>

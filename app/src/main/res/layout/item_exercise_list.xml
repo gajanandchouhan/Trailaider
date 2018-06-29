@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorDarkGray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_70dp"
+            android:src="@color/colorDarkGray" />
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toLeftOf="@+id/textView_time"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_toStartOf="@+id/textView_time"
+            android:padding="@dimen/_10dp"
+            android:text="Title"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_14sp" />
+
+        <com.trailaider.app.ui.custom.TextViewReguler
+
+            android:id="@+id/textView_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10dp"
+            android:background="@color/colorGreen"
+            android:gravity="center"
+            android:padding="@dimen/_10dp"
+            android:text="Title"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_14sp" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:maxHeight="@dimen/_100dp"
+            android:paddingEnd="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingStart="0dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:thumb="@android:color/transparent" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorDarkGray" />
+
+
+    <com.trailaider.app.ui.custom.TextViewReguler
+        android:id="@+id/textView_rest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10dp"
+        android:text="Rest 10 seconds"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="@dimen/_14sp" />
+
+    <cn.jzvd.JZVideoPlayerStandard
+        android:id="@+id/videoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone" />
+</LinearLayout>

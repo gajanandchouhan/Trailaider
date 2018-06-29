@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorGreen</color>
+    <color name="colorPrimaryDark">@color/colorGreenDark</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorGreen">#00cc00 </color>
+    <color name="colorGreenSemiTrans">#A1249f24</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGreenDark">#079307</color>
+    <color name="colorBlack">#000000</color>
+    <color name="color_separator">#585858</color>
+    <color name="colorDarkGray">#333333</color>
+    <color name="colorDarkGraySemiTrans">#c8333333</color>
+    <color name="colorLoghtGray">#DCDCDC</color>
+    <color name="colorLightGray">#B9B9B9</color>
+    <color name="colorYellow">#FFBA00</color>
+    <color name="trans_20">#1A000000</color>
+    <color name="colorRed">#cf0e17</color>
+</resources>
