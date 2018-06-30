@@ -9,12 +9,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
+import com.trailaider.app.data.CourseApiContent;
 import com.trailaider.app.data.courses.WeekModel;
 import com.trailaider.app.ui.activity.day.DayListActivty;
 import com.trailaider.app.utils.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -24,9 +26,9 @@ import java.util.List;
 public class WeekListAdapter extends RecyclerView.Adapter<WeekListAdapter.ItemViewHolder> {
 
     private final Context mContext;
-    private List<WeekModel> list;
+    private List<CourseApiContent> list;
 
-    public WeekListAdapter(Context mContext, List<WeekModel> list) {
+    public WeekListAdapter(Context mContext, List<CourseApiContent> list) {
         this.mContext = mContext;
         this.list = list;
     }
@@ -41,7 +43,7 @@ public class WeekListAdapter extends RecyclerView.Adapter<WeekListAdapter.ItemVi
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
 
-        holder.textViewWeek.setText(list.get(position).getWeek());
+        holder.textViewWeek.setText(String.format(Locale.getDefault(),"Week %d", position + 1));
     }
 
     @Override
@@ -61,8 +63,8 @@ public class WeekListAdapter extends RecyclerView.Adapter<WeekListAdapter.ItemVi
         @Override
         public void onClick(View view) {
             Bundle bundle = new Bundle();
-            bundle.putString("week", list.get(getAdapterPosition()).getWeek());
-            bundle.putSerializable("day_list", (ArrayList) list.get(getAdapterPosition()).getDaysList());
+            bundle.putString("week", String.format(Locale.getDefault(),"Week %d", getAdapterPosition() + 1));
+            bundle.putSerializable("day_list", (ArrayList) list.get(getAdapterPosition()).getDays());
             CommonUtils.startActivity(mContext, DayListActivty.class, bundle, false);
 
         }

@@ -4,8 +4,7 @@ import android.content.Context;
 
 import com.trailaider.app.R;
 import com.trailaider.app.base.BasePresenter;
-import com.trailaider.app.data.model.BaseResponseModel;
-import com.trailaider.app.data.model.login.LoginResponseModel;
+import com.trailaider.app.data.CourseApiResponse;
 import com.trailaider.app.data.network.ApiController;
 import com.trailaider.app.data.network.CheckNetworkState;
 import com.trailaider.app.data.network.RequestType;
@@ -28,11 +27,11 @@ public class CoursePresenter extends BasePresenter<CourseView> {
     }
 
     @Override
-    protected void initialiseView(CourseView view) {
+    public void initialiseView(CourseView view) {
         this.view = view;
     }
 
-    public void getCourses(HashMap<String, String> params, HashMap<String, File> files) {
+    public void getCourses(HashMap<String, String> params) {
 
         if (!CheckNetworkState.isOnline(mContext)) {
             CommonUtils.showSnakeBar(mContext, mContext.getString(R.string.no_internet));
@@ -40,14 +39,16 @@ public class CoursePresenter extends BasePresenter<CourseView> {
         }
         view.showProgress();
         ApiController apiController = ApiController.getInstance();
-        apiController.call(mContext, RequestType.REQ_GET_COURSES, new ResponseHandler<BaseResponseModel>() {
+        apiController.call(mContext, RequestType.REQ_GET_COURSES, new ResponseHandler<CourseApiResponse>() {
             @Override
-            public void onResponse(BaseResponseModel baseResponseModel) {
+            public void onResponse(CourseApiResponse baseResponseModel) {
                 view.hideProgress();
                 if (baseResponseModel != null) {
                     CommonUtils.showSnakeBar(mContext, baseResponseModel.getMessage());
                     if (baseResponseModel.getStatus().equalsIgnoreCase(ConstantLib.SUCCESS)) {
-                        CommonUtils.showToast(mContext,baseResponseModel.getMessage());
+                        view.setCourseApiResponse(baseResponseModel);
+                    } else {
+                        CommonUtils.showToast(mContext, baseResponseModel.getMessage());
                     }
                 } else {
                     CommonUtils.showSnakeBar(mContext, mContext.getString(R.string.server_error));

@@ -10,12 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
-import com.trailaider.app.data.courses.CourseDataModel;
-import com.trailaider.app.ui.activity.walking.ExerciseActivity;
+import com.trailaider.app.data.CourseAPiDays;
 import com.trailaider.app.ui.activity.walking.PreWalkingActivity;
 import com.trailaider.app.utils.CommonUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -28,10 +26,10 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ItemView
 
     private final Context mContext;
     private final String noOfWeek;
-    private List<CourseDataModel> list;
+    private List<CourseAPiDays> list;
     int visiblePos = 0;
 
-    public DayListAdapter(Context mContext, List<CourseDataModel> list, String noOfWeeks) {
+    public DayListAdapter(Context mContext, List<CourseAPiDays> list, String noOfWeeks) {
         this.mContext = mContext;
         this.list = list;
         this.noOfWeek = noOfWeeks;
@@ -46,7 +44,7 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ItemView
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        if (list.get(position).getExercise()!=null&&list.get(position).getExercise().size()>0) {
+        if (position == 1 || position == 6) {
             holder.textViewSession2.setVisibility(View.VISIBLE);
             holder.textViewSession1.setText("Session 1");
             holder.textViewSession2.setText("Session 2");
@@ -54,6 +52,14 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ItemView
             holder.textViewSession2.setVisibility(View.GONE);
             holder.textViewSession1.setText("Session 1");
         }
+      /*  if (list.get(position).getExercise()!=null&&list.get(position).getExercise().size()>0) {
+            holder.textViewSession2.setVisibility(View.VISIBLE);
+            holder.textViewSession1.setText("Session 1");
+            holder.textViewSession2.setText("Session 2");
+        } else {
+            holder.textViewSession2.setVisibility(View.GONE);
+            holder.textViewSession1.setText("Session 1");
+        }*/
         if (position == visiblePos)
             holder.layoutTask.setVisibility(View.VISIBLE);
         else
@@ -91,16 +97,20 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ItemView
                     notifyDataSetChanged();
                     break;
                 case R.id.textView_session_1:
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("data", list.get(getAdapterPosition()));
-                    bundle.putString("week", noOfWeek);
-                    bundle.putString("day", "Day " + (getAdapterPosition() + 1));
-                    CommonUtils.startActivity(mContext, PreWalkingActivity.class, bundle, false);
+                    if (list.get(getAdapterPosition()).getLevel3().size() > 0) {
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("data", list.get(getAdapterPosition()));
+                        bundle.putString("week", noOfWeek);
+                        bundle.putString("day", "Day " + (getAdapterPosition() + 1));
+                        CommonUtils.startActivity(mContext, PreWalkingActivity.class, bundle, false);
+                    } else {
+                        CommonUtils.showToast(mContext, "Course content not available");
+                    }
                     break;
                 case R.id.textView_session_2:
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putSerializable("data", (ArrayList) list.get(getAdapterPosition()).getExercise());
-                    CommonUtils.startActivity(mContext, ExerciseActivity.class, bundle2, false);
+//                    Bundle bundle2 = new Bundle();
+//                    bundle2.putSerializable("data", (ArrayList) list.get(getAdapterPosition()).getExercise());
+//                    CommonUtils.startActivity(mContext, ExerciseActivity.class, bundle2, false);
                     break;
             }
 

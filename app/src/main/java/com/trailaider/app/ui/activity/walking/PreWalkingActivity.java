@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
+import com.trailaider.app.data.CourseAPiDays;
 import com.trailaider.app.data.courses.CourseDataModel;
 import com.trailaider.app.data.model.login.LoginResponseData;
 import com.trailaider.app.data.persistance.TrailaiderPreferences;
@@ -46,8 +47,8 @@ public class PreWalkingActivity extends BaseActivity {
         handler = new Handler();
         handler.postDelayed(runnable, 3000);
         Bundle bundleExtra = getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA);
-        CourseDataModel courseDataModel = (CourseDataModel) bundleExtra.getSerializable("data");
-        textViewAction.setText(courseDataModel.getHeading());
+        CourseAPiDays courseDataModel = (CourseAPiDays) bundleExtra.getSerializable("data");
+        textViewAction.setText(courseDataModel.getLevel2());
         textViewWeekDay.setText(String.format("%s %s", bundleExtra.getString("week"), bundleExtra.getString("day")));
     }
 

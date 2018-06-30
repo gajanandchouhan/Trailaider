@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
+import com.trailaider.app.data.CourseAPiDays;
 import com.trailaider.app.data.courses.CourseDataModel;
 import com.trailaider.app.ui.activity.BaseActivity;
 import com.trailaider.app.ui.activity.week.WeekListAdapter;
@@ -26,7 +27,7 @@ public class DayListActivty extends BaseActivity {
     RecyclerView recyclerView;
     private Toolbar toolbar;
     private TextView textViewWeek;
-    private List<CourseDataModel> daysList;
+    private List<CourseAPiDays> daysList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class DayListActivty extends BaseActivity {
         textViewTitle.setText(getString(R.string.my_course));
         Bundle bundleExtra = getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA);
         String noOfWeeks = bundleExtra.getString("week");
-        daysList= (List<CourseDataModel>) bundleExtra.getSerializable("day_list");
+        daysList= (List<CourseAPiDays>) bundleExtra.getSerializable("day_list");
         textViewWeek.setText(noOfWeeks);
 //        List<String> list = generateWeekList(7);
         recyclerView.setAdapter(new DayListAdapter(this,daysList,noOfWeeks));

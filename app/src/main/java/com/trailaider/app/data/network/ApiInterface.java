@@ -1,6 +1,7 @@
 package com.trailaider.app.data.network;
 
 
+import com.trailaider.app.data.CourseApiResponse;
 import com.trailaider.app.data.model.BaseResponseModel;
 import com.trailaider.app.data.model.chat.MessageResponseModel;
 import com.trailaider.app.data.model.chat.SendMessageResponseModel;
@@ -104,5 +105,5 @@ public interface ApiInterface {
 
     @Multipart
     @POST("getCourse")
-    Observable<BaseResponseModel> getCourses(@PartMap() Map<String, RequestBody> stringParams);
+    Observable<CourseApiResponse> getCourses(@PartMap() Map<String, RequestBody> stringParams);
 }

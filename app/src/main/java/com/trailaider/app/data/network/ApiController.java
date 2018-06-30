@@ -5,6 +5,7 @@ import android.content.Context;
 
 
 import com.trailaider.app.R;
+import com.trailaider.app.data.CourseApiResponse;
 import com.trailaider.app.data.model.BaseResponseModel;
 import com.trailaider.app.data.model.chat.MessageResponseModel;
 import com.trailaider.app.data.model.chat.SendMessageResponseModel;
@@ -148,10 +149,10 @@ public class ApiController implements RequestType {
                         .subscribe(new ResponseObserver<BaseResponseModel>(handler));
                 break;
             case REQ_GET_COURSES:
-                Observable<BaseResponseModel> getCoureseObservable = apiInterface.getCourses(stringMultipartParamsParams);
+                Observable<CourseApiResponse> getCoureseObservable = apiInterface.getCourses(stringMultipartParamsParams);
                 getCoureseObservable.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new ResponseObserver<BaseResponseModel>(handler));
+                        .subscribe(new ResponseObserver<CourseApiResponse>(handler));
                 break;
 
         }

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
-import com.trailaider.app.data.courses.CourseSectionModel;
+import com.trailaider.app.data.CourseList;
 
 import java.util.List;
 import java.util.Locale;
@@ -21,9 +21,9 @@ import java.util.Locale;
 public class CourseSectionAdapter extends RecyclerView.Adapter<CourseSectionAdapter.ItemViewHolder> {
 
     private final Context mContext;
-    private final List<CourseSectionModel> list;
+    private final List<CourseList> list;
 
-    public CourseSectionAdapter(Context mContext, List<CourseSectionModel> list) {
+    public CourseSectionAdapter(Context mContext, List<CourseList> list) {
         this.list = list;
         this.mContext = mContext;
     }
@@ -37,7 +37,7 @@ public class CourseSectionAdapter extends RecyclerView.Adapter<CourseSectionAdap
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        CourseSectionModel courseSectionModel = list.get(position);
+        CourseList courseSectionModel = list.get(position);
         if (courseSectionModel.isCompleted()) {
             holder.textViewActionTime.setAlpha(0.5f);
             holder.textViewActionText.setAlpha(0.5f);
@@ -48,9 +48,9 @@ public class CourseSectionAdapter extends RecyclerView.Adapter<CourseSectionAdap
             holder.textViewActionText.setAlpha(1f);
             holder.textViewActionName.setAlpha(1f);
         }
-        holder.textViewActionName.setText(courseSectionModel.getActionLabel());
-        holder.textViewActionText.setText(courseSectionModel.getActionDesc());
-        holder.textViewActionTime.setText(String.format(Locale.getDefault(), "%d Mins", courseSectionModel.getTime()));
+        holder.textViewActionName.setText(courseSectionModel.getTitle());
+        holder.textViewActionText.setText(courseSectionModel.getDesc());
+        holder.textViewActionTime.setText(String.format(Locale.getDefault(), "%s Mins", courseSectionModel.getTime()));
     }
 
     @Override

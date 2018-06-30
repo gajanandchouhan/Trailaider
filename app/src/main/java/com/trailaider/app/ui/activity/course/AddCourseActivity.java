@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
+import com.trailaider.app.data.CourseApiResponse;
 import com.trailaider.app.data.model.login.LoginResponseData;
 import com.trailaider.app.data.persistance.TrailaiderPreferences;
 import com.trailaider.app.ui.activity.BaseActivity;
@@ -19,18 +20,21 @@ import com.trailaider.app.ui.activity.week.WeekListActivty;
 import com.trailaider.app.ui.dialog.HeightPicker;
 import com.trailaider.app.ui.dialog.SelectionListDialog;
 import com.trailaider.app.ui.dialog.WeightPicker;
+import com.trailaider.app.ui.fragment.courses.CoursePresenter;
+import com.trailaider.app.ui.fragment.courses.CourseView;
 import com.trailaider.app.utils.CommonUtils;
 import com.trailaider.app.utils.ConstantLib;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by gajanand on 14/1/18.
  */
 
-public class AddCourseActivity extends BaseActivity {
+public class AddCourseActivity extends BaseActivity implements CourseView {
 
     private Toolbar toolbar;
     private ActionBar actionBar;
@@ -44,6 +48,7 @@ public class AddCourseActivity extends BaseActivity {
     private int age;
     private int trekHeght;
     private double bmi;
+    private CoursePresenter presenter;
 //    For men: maximum heart rate = 220-age of the man user
 //    For women: max heart rate = 206 - age of woman user
 
@@ -90,7 +95,8 @@ public class AddCourseActivity extends BaseActivity {
 
     @Override
     public void initializePresneter() {
-
+        presenter = new CoursePresenter(this);
+        presenter.initialiseView(this);
     }
 
     @Override
@@ -145,7 +151,7 @@ public class AddCourseActivity extends BaseActivity {
         String courseDuration = getCourseDuration();
 
         if (trekDuration.isEmpty()) {
-            CommonUtils.showToast(this,getString(R.string.enter_trek_duration));
+            CommonUtils.showToast(this, getString(R.string.enter_trek_duration));
             return;
         }
         if (trekHeight.isEmpty()) {
@@ -153,15 +159,22 @@ public class AddCourseActivity extends BaseActivity {
             return;
         }
 
-        Bundle bundle = new Bundle();
+        /*Bundle bundle = new Bundle();
         bundle.putString("week", getCourseDuration());
         bundle.putDouble("bmi", bmi);
         bundle.putInt("age", age);
         bundle.putInt("trek_height", Integer.parseInt(trekHeight));
         bundle.putString("gender", loginData.getGender());
-        CommonUtils.startActivity(this, WeekListActivty.class, bundle, false);
-
+        CommonUtils.startActivity(this, WeekListActivty.class, bundle, false);*/
+        HashMap<String, String> params = new HashMap<>();
+        params.put("gender", loginData.getGender().toLowerCase().substring(0,1));
+        params.put("altitude", trekHeight);
+        params.put("bmi", String.valueOf(bmi));
+        params.put("no_of_weeks", courseDuration);
+        params.put("age", String.valueOf(age));
+        presenter.getCourses(params);
     }
+
 
     private String getCourseDuration() {
         switch (radioGroupCourseDuration.getCheckedRadioButtonId()) {
@@ -220,5 +233,14 @@ public class AddCourseActivity extends BaseActivity {
             list.add(String.valueOf(i) + " Days");
         }
         return list;
+    }
+
+    @Override
+    public void setCourseApiResponse(CourseApiResponse baseResponseModel) {
+        if (baseResponseModel.getData() != null && baseResponseModel.getData().getCourse_content() != null && baseResponseModel.getData().getCourse_content().size() > 0) {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("data", (ArrayList) baseResponseModel.getData().getCourse_content());
+           CommonUtils.startActivity(this, WeekListActivty.class,bundle,false);
+        }
     }
 }

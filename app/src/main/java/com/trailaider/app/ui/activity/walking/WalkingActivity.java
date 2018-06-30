@@ -46,6 +46,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.trailaider.app.R;
+import com.trailaider.app.data.CourseAPiDays;
+import com.trailaider.app.data.CourseList;
 import com.trailaider.app.data.courses.CourseDataModel;
 import com.trailaider.app.data.courses.CourseSectionModel;
 import com.trailaider.app.data.model.login.LoginResponseData;
@@ -102,7 +104,7 @@ public class WalkingActivity extends BaseActivity {
     List<Location> locationList;
     private DecimalFormat decimalFormat;
     private TextView textViewSpeed;
-    private CourseDataModel courseDataMpdel;
+    private CourseAPiDays courseDataMpdel;
     private String week;
     private String day;
     private TextView textViewWeekDay;
@@ -127,9 +129,9 @@ public class WalkingActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walking);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        courseDataMpdel = (CourseDataModel) getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA).getSerializable("data");
+        courseDataMpdel = (CourseAPiDays) getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA).getSerializable("data");
         Bundle bundleExtra = getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA);
-        totalStep = courseDataMpdel.getCourseSectionModelList().size();
+        totalStep = courseDataMpdel.getLevel3().size();
         week = bundleExtra.getString("week");
         day = bundleExtra.getString("day");
         decimalFormat = new DecimalFormat("##.##");
@@ -268,7 +270,7 @@ public class WalkingActivity extends BaseActivity {
     private void setUpUi() {
         textViewTips.setText(courseDataMpdel.getTips());
         textViewWeekDay.setText(String.format("%s %s", week, day));
-        adapter = new CourseSectionAdapter(this, courseDataMpdel.getCourseSectionModelList());
+        adapter = new CourseSectionAdapter(this, courseDataMpdel.getLevel3());
         recyclerView.setAdapter(adapter);
     }
 
@@ -456,8 +458,8 @@ public class WalkingActivity extends BaseActivity {
 
     private void checkResult(long result) {
         if (step < totalStep) {
-            CourseSectionModel courseSectionModel = courseDataMpdel.getCourseSectionModelList().get(step);
-            if (result == courseSectionModel.getTime() * 60000) {
+            CourseList courseSectionModel = courseDataMpdel.getLevel3().get(step);
+            if (result == Integer.parseInt(courseSectionModel.getTime())* 60000) {
                 timerService.stopTimer();
 
 //                    textViewActionName1.setAlpha(0.5f);
