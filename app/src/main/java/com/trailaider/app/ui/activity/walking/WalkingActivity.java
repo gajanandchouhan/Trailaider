@@ -268,7 +268,10 @@ public class WalkingActivity extends BaseActivity {
     }
 
     private void setUpUi() {
-        textViewTips.setText(courseDataMpdel.getTips());
+        String tips = "\u2022"+courseDataMpdel.getTips();
+        tips=tips.replace("\n","\n\u2022");
+
+        textViewTips.setText(tips);
         textViewWeekDay.setText(String.format("%s %s", week, day));
         adapter = new CourseSectionAdapter(this, courseDataMpdel.getLevel3());
         recyclerView.setAdapter(adapter);
@@ -292,7 +295,7 @@ public class WalkingActivity extends BaseActivity {
         textViewWeekDay = findViewById(R.id.textView_week_day);
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new SpacesItemDecoration(20));
+        recyclerView.addItemDecoration(new SpacesItemDecoration(5));
     }
 
 
