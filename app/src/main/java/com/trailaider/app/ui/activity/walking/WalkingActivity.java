@@ -48,8 +48,6 @@ import com.google.android.gms.tasks.Task;
 import com.trailaider.app.R;
 import com.trailaider.app.data.CourseAPiDays;
 import com.trailaider.app.data.CourseList;
-import com.trailaider.app.data.courses.CourseDataModel;
-import com.trailaider.app.data.courses.CourseSectionModel;
 import com.trailaider.app.data.model.login.LoginResponseData;
 import com.trailaider.app.data.persistance.TrailaiderPreferences;
 import com.trailaider.app.service.TimerService;
@@ -217,8 +215,9 @@ public class WalkingActivity extends BaseActivity {
     protected void createLocationRequest() {
         locationList = new ArrayList<>();
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(10000); // Update location every 1 minute
+        mLocationRequest.setInterval(10000);
         mLocationRequest.setFastestInterval(5000);
+        mLocationRequest.setSmallestDisplacement(10);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(mLocationRequest);
@@ -268,8 +267,8 @@ public class WalkingActivity extends BaseActivity {
     }
 
     private void setUpUi() {
-        String tips = "\u2022"+courseDataMpdel.getTips();
-        tips=tips.replace("\n","\n\u2022");
+        String tips = /*"\u2022"+*/courseDataMpdel.getTips();
+//        tips=tips.replace("\n","\n\u2022");
 
         textViewTips.setText(tips);
         textViewWeekDay.setText(String.format("%s %s", week, day));
@@ -462,7 +461,7 @@ public class WalkingActivity extends BaseActivity {
     private void checkResult(long result) {
         if (step < totalStep) {
             CourseList courseSectionModel = courseDataMpdel.getLevel3().get(step);
-            if (result == Integer.parseInt(courseSectionModel.getTime())* 60000) {
+            if (result == Integer.parseInt(courseSectionModel.getTime()) * 60000) {
                 timerService.stopTimer();
 
 //                    textViewActionName1.setAlpha(0.5f);

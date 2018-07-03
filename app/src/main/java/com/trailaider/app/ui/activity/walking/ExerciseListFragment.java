@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
+import com.trailaider.app.data.Session2Data;
 import com.trailaider.app.data.courses.ExerciseModel;
 import com.trailaider.app.data.model.login.LoginResponseData;
 import com.trailaider.app.ui.fragment.BaseFragment;
@@ -37,9 +38,9 @@ public class ExerciseListFragment extends BaseFragment {
     private RecyclerView recyclerView;
     private LoginResponseData loginData;
     private ExerciseListAdapter adapter;
-    private List<ExerciseModel> list;
+    private List<Session2Data> list;
     private int current = 0;
-    private ExerciseModel exerciseModel;
+    private Session2Data exerciseModel;
     private CountDownTimer cdt;
     private ImageView imageViewPlay;
     private TextView textViewCountDown;
@@ -147,7 +148,7 @@ public class ExerciseListFragment extends BaseFragment {
 
             public void onTick(long millisUntilFinished) {
                 miliForTImer = millisUntilFinished;
-                long total = exerciseModel.getSeconds()*1000;
+                long total = Long.parseLong(exerciseModel.getTime())*1000;
                 long remains = total - millisUntilFinished;
                 int seconds = (int) (remains / 1000) % 60;
                 int minutes = (int) ((remains / (1000 * 60)) % 60);
@@ -167,7 +168,7 @@ public class ExerciseListFragment extends BaseFragment {
                 if (current <= list.size() - 1) {
                     mPlayer.start();
                     exerciseModel = list.get(current);
-                    miliForTImer = exerciseModel.getSeconds() * 1000;
+                    miliForTImer = Long.parseLong(exerciseModel.getTime()) * 1000;
                     startCount();
                 }
 
@@ -211,7 +212,7 @@ public class ExerciseListFragment extends BaseFragment {
                         isPaused = false;
                         if (firstRun) {
                             exerciseModel = list.get(current);
-                            miliForTImer = exerciseModel.getSeconds() * 1000;
+                            miliForTImer = Long.parseLong(exerciseModel.getTime()) * 1000;
                             firstRun = false;
                             startCount();
                             imageViewPlay.setImageResource(R.drawable.jz_pause_normal);
@@ -228,7 +229,7 @@ public class ExerciseListFragment extends BaseFragment {
         }
     }
 
-    public void setList(List<ExerciseModel> list) {
+    public void setList(List<Session2Data> list) {
         this.list.clear();
         this.list.addAll(list);
         adapter.notifyDataSetChanged();

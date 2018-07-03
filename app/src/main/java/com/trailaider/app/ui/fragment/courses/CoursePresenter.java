@@ -44,11 +44,10 @@ public class CoursePresenter extends BasePresenter<CourseView> {
             public void onResponse(CourseApiResponse baseResponseModel) {
                 view.hideProgress();
                 if (baseResponseModel != null) {
-                    CommonUtils.showSnakeBar(mContext, baseResponseModel.getMessage());
                     if (baseResponseModel.getStatus().equalsIgnoreCase(ConstantLib.SUCCESS)) {
                         view.setCourseApiResponse(baseResponseModel);
                     } else {
-                        CommonUtils.showToast(mContext, baseResponseModel.getMessage());
+                        CommonUtils.showSnakeBar(mContext, baseResponseModel.getMessage());
                     }
                 } else {
                     CommonUtils.showSnakeBar(mContext, mContext.getString(R.string.server_error));

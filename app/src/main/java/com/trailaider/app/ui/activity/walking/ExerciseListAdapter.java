@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
-import com.trailaider.app.data.courses.ExerciseModel;
+import com.trailaider.app.data.Session2Data;
 import com.trailaider.app.utils.CommonUtils;
 
 import java.util.List;
@@ -25,7 +25,7 @@ import cn.jzvd.JZVideoPlayerStandard;
 public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapter.ItemViewHolder> {
 
     private final Context mContext;
-    private final List<ExerciseModel> list;
+    private final List<Session2Data> list;
 
     public ExerciseListAdapter(Context mContext, List list) {
         this.list = list;
@@ -46,23 +46,25 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        ExerciseModel exerciseModel = list.get(position);
-        holder.textViewName.setText(exerciseModel.getName());
-        if (exerciseModel.getRest() > 0) {
+        Session2Data exerciseModel = list.get(position);
+        holder.textViewName.setText(exerciseModel.getTitle());
+        int rest = Integer.parseInt(exerciseModel.getRestTime() != null && !exerciseModel.getRestTime().isEmpty() ? exerciseModel.getRestTime() : "0");
+        if (rest > 0) {
             holder.textViewRest.setVisibility(View.VISIBLE);
-            String rest = exerciseModel.getRest() < 60 ?
-                    exerciseModel.getRest() + " seconds" :
-                    exerciseModel.getRest() / 60 + " minutes";
-            holder.textViewRest.setText(String.format("Rest %s", rest));
+            String restString = rest < 60 ?
+                    rest + " seconds" :
+                    rest / 60 + " minutes";
+            holder.textViewRest.setText(String.format("Rest %s", restString));
         } else {
             holder.textViewRest.setVisibility(View.GONE);
         }
-        if (exerciseModel.getSeconds() > 0) {
+        int time = Integer.parseInt(exerciseModel.getTime() != null && !exerciseModel.getTime().isEmpty() ? exerciseModel.getTime() : "0");
+        if (time > 0) {
             holder.textViewTime.setVisibility(View.VISIBLE);
-            holder.textViewTime.setText(exerciseModel.getSeconds() < 60 ?
-                    exerciseModel.getSeconds() + " seconds" :
-                    exerciseModel.getSeconds() / 60 + " minutes");
-            holder.seekBar.setMax((int) exerciseModel.getSeconds() * 10);
+            holder.textViewTime.setText(time < 60 ?
+                    time + " seconds" :
+                    time / 60 + " minutes");
+            holder.seekBar.setMax(time * 10);
         } else {
             holder.textViewTime.setVisibility(View.GONE);
         }
@@ -101,9 +103,11 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
 //            Bundle bundle = new Bundle();
 //            bundle.putString("id", friendModel.getId());
 //            CommonUtils.startActivity(mContext, ReviewUserProfileActivity.class, bundle, false);
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("data", list.get(getAdapterPosition()));
-            CommonUtils.startActivity(mContext, VideoPLayerActivity.class, bundle, false);
+            if (list.get(getAdapterPosition()).getVideo() != null && !list.get(getAdapterPosition()).getVideo().isEmpty()) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("data", list.get(getAdapterPosition()));
+                CommonUtils.startActivity(mContext, VideoPLayerActivity.class, bundle, false);
+            }
         }
     }
 

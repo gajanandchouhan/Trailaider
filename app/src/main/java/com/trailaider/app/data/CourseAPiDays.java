@@ -12,7 +12,16 @@ public class CourseAPiDays implements Serializable {
     private String level1;
     private String level2;
     List<CourseList> level3;
+    List<Session2Data> session2;
     private String tips;
+
+    public void setSession2(List<Session2Data> session2) {
+        this.session2 = session2;
+    }
+
+    public List<Session2Data> getSession2() {
+        return session2;
+    }
 
     public String getTitle() {
         return title;

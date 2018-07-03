@@ -11,9 +11,11 @@ import android.widget.TextView;
 
 import com.trailaider.app.R;
 import com.trailaider.app.data.CourseAPiDays;
+import com.trailaider.app.ui.activity.walking.ExerciseActivity;
 import com.trailaider.app.ui.activity.walking.PreWalkingActivity;
 import com.trailaider.app.utils.CommonUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -44,15 +46,7 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ItemView
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        if (position == 1 || position == 6) {
-            holder.textViewSession2.setVisibility(View.VISIBLE);
-            holder.textViewSession1.setText("Session 1");
-            holder.textViewSession2.setText("Session 2");
-        } else {
-            holder.textViewSession2.setVisibility(View.GONE);
-            holder.textViewSession1.setText("Session 1");
-        }
-      /*  if (list.get(position).getExercise()!=null&&list.get(position).getExercise().size()>0) {
+      /*  if (position == 1 || position == 6) {
             holder.textViewSession2.setVisibility(View.VISIBLE);
             holder.textViewSession1.setText("Session 1");
             holder.textViewSession2.setText("Session 2");
@@ -60,6 +54,14 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ItemView
             holder.textViewSession2.setVisibility(View.GONE);
             holder.textViewSession1.setText("Session 1");
         }*/
+        if (list.get(position).getSession2()!=null&&list.get(position).getSession2().size()>0) {
+            holder.textViewSession2.setVisibility(View.VISIBLE);
+            holder.textViewSession1.setText("Session 1");
+            holder.textViewSession2.setText("Session 2");
+        } else {
+            holder.textViewSession2.setVisibility(View.GONE);
+            holder.textViewSession1.setText("Session 1");
+        }
         if (position == visiblePos)
             holder.layoutTask.setVisibility(View.VISIBLE);
         else
@@ -108,9 +110,9 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ItemView
                     }
                     break;
                 case R.id.textView_session_2:
-//                    Bundle bundle2 = new Bundle();
-//                    bundle2.putSerializable("data", (ArrayList) list.get(getAdapterPosition()).getExercise());
-//                    CommonUtils.startActivity(mContext, ExerciseActivity.class, bundle2, false);
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putSerializable("data", (ArrayList) list.get(getAdapterPosition()).getSession2());
+                    CommonUtils.startActivity(mContext, ExerciseActivity.class, bundle2, false);
                     break;
             }
 

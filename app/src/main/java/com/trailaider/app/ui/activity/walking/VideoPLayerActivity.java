@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
-import com.trailaider.app.data.courses.ExerciseModel;
+import com.trailaider.app.data.Session2Data;
 import com.trailaider.app.utils.ConstantLib;
 
 import cn.jzvd.JZVideoPlayer;
@@ -20,8 +20,7 @@ public class VideoPLayerActivity extends AppCompatActivity {
 
     private TextView textViewName, textViewRest, textViewTime;
     private JZVideoPlayerStandard jzVideoPlayerStandard;
-    ExerciseModel exerciseModel;
-    String VIDEO_BASE_URL = "http://trailaider.orangeboxtechnologies.com/media/course_videos/";
+    Session2Data exerciseModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,26 +32,29 @@ public class VideoPLayerActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.textView_title);
         textViewRest = findViewById(R.id.textView_rest);
         textViewTime = findViewById(R.id.textView_time);
-        exerciseModel = (ExerciseModel) getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA).getSerializable("data");
-        textViewName.setText(exerciseModel.getName());
-        if (exerciseModel.getRest() > 0) {
+        exerciseModel = (Session2Data) getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA).getSerializable("data");
+        textViewName.setText(exerciseModel.getTitle());
+        int rest=Integer.parseInt(exerciseModel.getRestTime()!=null&&!exerciseModel.getRestTime()
+                .isEmpty()?exerciseModel.getRestTime():"0");
+        if (rest > 0) {
             textViewRest.setVisibility(View.VISIBLE);
-            String rest = exerciseModel.getRest() < 60 ?
-                    exerciseModel.getRest() + " seconds" :
-                    exerciseModel.getRest() / 60 + " minutes";
-            textViewRest.setText(String.format("Rest %s", rest));
+            String restString = rest < 60 ?
+                    rest + " seconds" :
+                    rest / 60 + " minutes";
+            textViewRest.setText(String.format("Rest %s", restString));
         } else
             textViewRest.setVisibility(View.GONE);
-        if (exerciseModel.getSeconds() > 0){
+        int time = Integer.parseInt(exerciseModel.getTime()!=null&&!exerciseModel.getTime().isEmpty()?exerciseModel.getTime():"0");
+        if (time > 0) {
             textViewTime.setVisibility(View.VISIBLE);
-            textViewTime.setText(exerciseModel.getSeconds() < 60 ?
-                    exerciseModel.getSeconds() + " seconds" :
-                    exerciseModel.getSeconds() / 60 + " minutes");
-        }else{
+            textViewTime.setText(time < 60 ?
+                    time + " seconds" :
+                    time / 60 + " minutes");
+        } else {
             textViewTime.setVisibility(View.GONE);
         }
 
-        jzVideoPlayerStandard.setUp(VIDEO_BASE_URL + exerciseModel.getName() + ".mp4"
+        jzVideoPlayerStandard.setUp(exerciseModel.getVideo()
                 , JZVideoPlayerStandard.SCREEN_WINDOW_LIST);
         jzVideoPlayerStandard.startButton.performClick();
     }

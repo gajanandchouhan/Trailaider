@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.trailaider.app.R;
+import com.trailaider.app.data.Session2Data;
 import com.trailaider.app.data.courses.ExerciseModel;
 import com.trailaider.app.data.model.login.LoginResponseData;
 import com.trailaider.app.data.persistance.TrailaiderPreferences;
@@ -40,7 +41,7 @@ public class ExerciseActivity extends BaseActivity {
     private TabLayout tabLayout;
     private ViewPager pager;
     private ExercisePagerAdapter pagerAdapter;
-    private List<ExerciseModel> exerciseModelList;
+    private List<Session2Data> exerciseModelList;
     private List stretchingModelList;
 
 
@@ -59,7 +60,7 @@ public class ExerciseActivity extends BaseActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         Bundle bundleExtra = getIntent().getBundleExtra(ConstantLib.KEY_BUNDLE_EXTRA);
         stretchingModelList = new ArrayList();
-        exerciseModelList = (List<ExerciseModel>) bundleExtra.getSerializable("data");
+        exerciseModelList = (List<Session2Data>) bundleExtra.getSerializable("data");
         pager.post(new Runnable() {
             @Override
             public void run() {
