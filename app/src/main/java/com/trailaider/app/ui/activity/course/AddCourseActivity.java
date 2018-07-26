@@ -169,7 +169,7 @@ public class AddCourseActivity extends BaseActivity implements CourseView {
         HashMap<String, String> params = new HashMap<>();
         params.put("gender", loginData.getGender().toLowerCase().substring(0,1));
         params.put("altitude", trekHeight);
-        params.put("bmi", /*String.valueOf(bmi)*/"18");
+        params.put("bmi", String.valueOf(bmi));
         params.put("no_of_weeks", courseDuration);
         params.put("age", String.valueOf(age));
         presenter.getCourses(params);
