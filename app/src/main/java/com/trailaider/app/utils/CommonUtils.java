@@ -8,11 +8,15 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -26,9 +30,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
+import com.trailaider.app.GlideApp;
 import com.trailaider.app.ui.pickers.MyDatePicker;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
@@ -323,7 +333,7 @@ public class CommonUtils {
 
         int age = 0;
         try {
-            Date date1 = new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).parse(date);
+            Date date1 = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(date);
             Calendar now = Calendar.getInstance();
             Calendar dob = Calendar.getInstance();
             dob.setTime(date1);
@@ -349,5 +359,41 @@ public class CommonUtils {
         }
         return age;
 
+    }
+
+    public static void shareImageAndText(final Context mContext, final String text, String imagUrl) {
+        if (imagUrl != null) {
+            GlideApp.with(mContext).asBitmap().load(imagUrl).into(new SimpleTarget<Bitmap>() {
+                @Override
+                public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                    Uri localBitmapUri = getLocalBitmapUri(resource, mContext);
+                    if (localBitmapUri != null) {
+                        Intent shareIntent = new Intent();
+                        shareIntent.setAction(Intent.ACTION_SEND);
+                        shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+                        shareIntent.putExtra(Intent.EXTRA_STREAM, localBitmapUri);
+                        shareIntent.setType("image/*");
+                        mContext.startActivity(shareIntent);
+                    }
+                }
+            });
+        } else {
+            shareText(text, mContext);
+        }
+
+    }
+
+    private static Uri getLocalBitmapUri(Bitmap bmp, Context context) {
+        Uri bmpUri = null;
+        try {
+            File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "share_image.png");
+            FileOutputStream out = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.PNG, 90, out);
+            out.close();
+            bmpUri = Uri.fromFile(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bmpUri;
     }
 }

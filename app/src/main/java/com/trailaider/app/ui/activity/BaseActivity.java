@@ -5,9 +5,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -17,6 +20,7 @@ import com.trailaider.app.data.model.trek.TrekResponseData;
 import com.trailaider.app.data.network.CheckNetworkState;
 import com.trailaider.app.data.persistance.DBHelper;
 import com.trailaider.app.utils.CommonUtils;
+import com.trailaider.app.utils.ConstantLib;
 
 import java.util.List;
 
@@ -67,6 +71,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         return uri;
     }
 
-
-
+    public void shareContent(String text, String image) {
+        if (CommonUtils.hasPermissions(this, ConstantLib.PERMISSION_IMAGE_PICK)) {
+            CommonUtils.shareImageAndText(this, text, image);
+        }else{
+            ActivityCompat.requestPermissions(this, ConstantLib.PERMISSION_IMAGE_PICK, 1);
+        }
+    }
 }
