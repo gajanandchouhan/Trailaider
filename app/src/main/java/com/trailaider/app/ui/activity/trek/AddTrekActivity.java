@@ -1,10 +1,12 @@
 package com.trailaider.app.ui.activity.trek;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,24 +33,26 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.trailaider.app.R;
 import com.trailaider.app.data.model.login.LoginResponseData;
-import com.trailaider.app.data.model.trek.TrekImageModel;
 import com.trailaider.app.data.model.trek.TrekResponseData;
 import com.trailaider.app.data.persistance.TrailaiderPreferences;
 import com.trailaider.app.ui.activity.BaseActivity;
 import com.trailaider.app.ui.activity.review.ReviewmageListAdapter;
 import com.trailaider.app.ui.dialog.SelectionListDialog;
 import com.trailaider.app.ui.dialog.TrekTypeSelectionDialog;
+import com.trailaider.app.ui.pickers.ImagePickerUtils;
 import com.trailaider.app.utils.AddressListner;
 import com.trailaider.app.utils.CommonUtils;
 import com.trailaider.app.utils.ConstantLib;
+import com.trailaider.app.utils.Glide4Engine;
 import com.trailaider.app.utils.LocationTask;
+import com.zhihu.matisse.Matisse;
+import com.zhihu.matisse.MimeType;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import me.iwf.photopicker.PhotoPicker;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -60,6 +64,7 @@ import okhttp3.RequestBody;
 public class AddTrekActivity extends BaseActivity implements AddTrekView {
 
     private static final int REQUEST_CHECK_SETTINGS = 105;
+    private static final int REQUEST_CODE_CHOOSE = 11;
     private Toolbar toolbar;
     private ActionBar actionBar;
     EditText editTextTrekName, editTextTrekHeight;
@@ -73,6 +78,7 @@ public class AddTrekActivity extends BaseActivity implements AddTrekView {
     private RecyclerView recyclerView;
     private ReviewmageListAdapter adapter;
     private String unit;
+    private List<Uri> mSelected;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -120,14 +126,16 @@ public class AddTrekActivity extends BaseActivity implements AddTrekView {
     }
 
     private void openMultipicker() {
-        PhotoPicker.builder()
-                .setShowCamera(true)
-                .setPreviewEnabled(false)
-                .setShowGif(false)
-                .start(this, PhotoPicker.REQUEST_CODE);
+        Matisse.from(this)
+                .choose(MimeType.ofImage())
+                .countable(true)
+                .maxSelectable(6)
+                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                .imageEngine(new Glide4Engine())
+                .forResult(REQUEST_CODE_CHOOSE);
     }
 
-    private void uploadInsideImages(ArrayList<String> photos) {
+    private void uploadInsideImages(List<String> photos) {
         list.addAll(photos);
         adapter.notifyDataSetChanged();
     }
@@ -195,11 +203,11 @@ public class AddTrekActivity extends BaseActivity implements AddTrekView {
             return;
         }
 
-        TrekResponseData data=new TrekResponseData();
+        TrekResponseData data = new TrekResponseData();
         data.setTrek_type(trekType);
         data.setTrek_name(name);
         data.setTrek_duration(trekDuration.replace(" Days", ""));
-        data.setTrek_height(trekHeight+" "+unit);
+        data.setTrek_height(trekHeight + " " + unit);
 
         MultipartBody.Builder builder = new MultipartBody.Builder();
         builder.setType(MultipartBody.FORM);
@@ -224,7 +232,7 @@ public class AddTrekActivity extends BaseActivity implements AddTrekView {
 
         RequestBody finalRequestBody = builder.build();
 
-        presenter.addTrek(finalRequestBody,data,list);
+        presenter.addTrek(finalRequestBody, data, list);
        /* if (location != null) {
             getLocationAddress(location, name, body);
         } else {
@@ -305,6 +313,7 @@ public class AddTrekActivity extends BaseActivity implements AddTrekView {
         });
     }
 
+    @SuppressLint("MissingPermission")
     private void getLocation() {
         FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -354,13 +363,11 @@ public class AddTrekActivity extends BaseActivity implements AddTrekView {
                 finish();
             }
         }
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == PhotoPicker.REQUEST_CODE) {
-                if (data != null) {
-                    ArrayList<String> photos =
-                            data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                    uploadInsideImages(photos);
-                }
+        if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
+            mSelected = Matisse.obtainResult(data);
+            List<String> photos = ImagePickerUtils.getPathList(this, mSelected);
+            if (photos != null) {
+                uploadInsideImages(photos);
             }
         }
     }

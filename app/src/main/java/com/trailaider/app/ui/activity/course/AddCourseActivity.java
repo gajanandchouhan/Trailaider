@@ -83,8 +83,8 @@ public class AddCourseActivity extends BaseActivity implements CourseView {
             String weightInkg = weight.replace(" kgs", "");
             String heighInCM = height.replace(" cm", "");
             double heghtInM = Double.parseDouble(heighInCM) / 100;
-            double BMI = (Double.parseDouble(weightInkg) / heghtInM) / heghtInM;
-            editTextBmi.setText(new DecimalFormat("##.##").format(BMI));
+            bmi = (Double.parseDouble(weightInkg) / heghtInM) / heghtInM;
+            editTextBmi.setText(new DecimalFormat("##.##").format(bmi));
         }
 
         String dob = loginData.getDob();
@@ -167,7 +167,7 @@ public class AddCourseActivity extends BaseActivity implements CourseView {
         bundle.putString("gender", loginData.getGender());
         CommonUtils.startActivity(this, WeekListActivty.class, bundle, false);*/
         HashMap<String, String> params = new HashMap<>();
-        params.put("gender", loginData.getGender().toLowerCase().substring(0,1));
+        params.put("gender", loginData.getGender().toLowerCase().substring(0, 1));
         params.put("altitude", trekHeight);
         params.put("bmi", String.valueOf(bmi));
         params.put("no_of_weeks", courseDuration);
@@ -240,7 +240,7 @@ public class AddCourseActivity extends BaseActivity implements CourseView {
         if (baseResponseModel.getData() != null && baseResponseModel.getData().getCourse_content() != null && baseResponseModel.getData().getCourse_content().size() > 0) {
             Bundle bundle = new Bundle();
             bundle.putSerializable("data", (ArrayList) baseResponseModel.getData().getCourse_content());
-           CommonUtils.startActivity(this, WeekListActivty.class,bundle,false);
+            CommonUtils.startActivity(this, WeekListActivty.class, bundle, false);
         }
     }
 }

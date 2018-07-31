@@ -39,7 +39,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     implementation 'com.google.android.gms:play-services-location:15.0.1'
     implementation 'org.greenrobot:greendao:3.2.2' // add library
-    implementation 'me.iwf.photopicker:PhotoPicker:0.9.10@aar'
+    implementation 'com.zhihu.android:matisse:0.5.2-beta1'
     implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
     implementation 'cn.jzvd:jiaozivideoplayer:6.2.9'
 }

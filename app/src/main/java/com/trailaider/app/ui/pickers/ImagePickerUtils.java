@@ -13,6 +13,10 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 
 import com.trailaider.app.ui.activity.BaseActivity;
+import com.trailaider.app.ui.activity.trek.AddTrekActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -156,6 +160,7 @@ public class ImagePickerUtils {
     private static boolean isGooglePhotosUri(Uri uri) {
         return "com.google.android.apps.photos.content".equals(uri.getAuthority());
     }
+
     public static void showImagePicker(final BaseActivity mContext) {
         new ImagePickerDialog(mContext, new ImagePickerDialog.ClickListener() {
             @Override
@@ -184,5 +189,22 @@ public class ImagePickerUtils {
 
             }
         }).show();
+    }
+
+    public static List<String> getPathList(Context context, List<Uri> uriList) {
+        if (uriList != null && uriList.size() > 0) {
+            List<String> pathList = new ArrayList<>();
+            for (Uri uri : uriList) {
+                if (uri != null) {
+                    String path = getPath(context, uri);
+                    if (path != null) {
+                        pathList.add(path);
+
+                    }
+                }
+            }
+            return pathList;
+        }
+        return null;
     }
 }

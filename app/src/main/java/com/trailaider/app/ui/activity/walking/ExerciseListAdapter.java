@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.trailaider.app.R;
 import com.trailaider.app.data.Session2Data;
 import com.trailaider.app.utils.CommonUtils;
+import com.trailaider.app.utils.ConstantLib;
 
 import java.util.List;
 
@@ -48,15 +49,17 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         Session2Data exerciseModel = list.get(position);
         holder.textViewName.setText(exerciseModel.getTitle());
-        int rest = Integer.parseInt(exerciseModel.getRestTime() != null && !exerciseModel.getRestTime().isEmpty() ? exerciseModel.getRestTime() : "0");
-        if (rest > 0) {
-            holder.textViewRest.setVisibility(View.VISIBLE);
-            String restString = rest < 60 ?
-                    rest + " seconds" :
-                    rest / 60 + " minutes";
-            holder.textViewRest.setText(String.format("Rest %s", restString));
+        if (exerciseModel.getUnit() != null && !exerciseModel.getUnit().isEmpty()) {
+            holder.textViewTime.setVisibility(View.VISIBLE);
+            holder.textViewTime.setText(String.format("%s %s", exerciseModel.getTime(), exerciseModel.getUnit()));
         } else {
-            holder.textViewRest.setVisibility(View.GONE);
+            holder.textViewTime.setVisibility(View.GONE);
+        }
+        if (exerciseModel.getRestUnit() != null && !exerciseModel.getRestUnit().isEmpty()) {
+            holder.textViewRest.setVisibility(View.VISIBLE);
+            holder.textViewRest.setText(String.format("Rest %s %s", exerciseModel.getRestTime(), exerciseModel.getRestUnit()));
+        } else {
+            holder.textViewRest.setVisibility(View.INVISIBLE);
         }
         int time = Integer.parseInt(exerciseModel.getTime() != null && !exerciseModel.getTime().isEmpty() ? exerciseModel.getTime() : "0");
         if (time > 0) {

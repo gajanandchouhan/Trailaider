@@ -29,4 +29,6 @@ public interface ConstantLib {
     String PROFILE_PUBLIC = "1";
     String PROFILE_PRIVATE = "0";
     String PROFILE_FRIEND = "2";
+    String UNIT_MINUTE = "min";
+    String UNIT_SECOND = "sec";
 }
