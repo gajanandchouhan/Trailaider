@@ -45,7 +45,6 @@ public class ProfilePresenter extends BasePresenter<ProfileView> {
             public void onResponse(LoginResponseModel baseResponseModel) {
                 view.hideProgress();
                 if (baseResponseModel != null) {
-                    CommonUtils.showSnakeBar(mContext, baseResponseModel.getMessage());
                     if (baseResponseModel.getStatus().equalsIgnoreCase(ConstantLib.SUCCESS)) {
                         view.setProfileData(baseResponseModel.getData());
                         CommonUtils.showToast(mContext,baseResponseModel.getMessage());

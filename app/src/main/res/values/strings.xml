@@ -250,11 +250,11 @@ For questions or concerns, please contact TRAILAIDER Consumer Services/Privacy,.
 </string>
     <string name="privacy_setting_text">Your privacy setting applies across all Trailaider app. When you change your setting in one app, it will change in the others.</string>
     <string name="everyone">Everyone (public)</string>
-    <string name="text_everyone">Everyone on NikePlus can search for you, view your full profile (including your aggregate activity data and shared content), send your friend requests and see your shared activity in the feed. See More</string>
+    <string name="text_everyone">Everyone on Trailaider can search for you, view your full profile (including your aggregate activity data and shared content), send your friend requests and see your shared activity in the feed. See More</string>
     <string name="friend_social">Friends (social)</string>
-    <string name="text_friend">Everyone on NikePlus can search for you, view your limited profile (including your aggregate activity data) and send you a friend request. Only your friends an view your profile can see your full profile and see your shared activity in the feed. See More</string>
+    <string name="text_friend">Everyone on Trailaider can search for you, view your limited profile (including your aggregate activity data) and send you a friend request. Only your friends an view your profile can see your full profile and see your shared activity in the feed. See More</string>
     <string name="only_me">Only Me (Private)</string>
-    <string name="text_only_me">Nobody on NikePlus can search for you, view your profile or view your activity. You will not be able to add friendsor engage in social activity. \n\nFriends Tagging (Allow/Don’t Allow) Allow Friend tagging so your friends on Trailaider can tag you in their posts in the review section and in Trek Photos.</string>
+    <string name="text_only_me">Nobody on Trailaider can search for you, view your profile or view your activity. You will not be able to add friendsor engage in social activity. \n\nFriends Tagging (Allow/Don’t Allow) Allow Friend tagging so your friends on Trailaider can tag you in their posts in the review section and in Trek Photos.</string>
     <string name="registered_email_to_restore_password">Registered email to restore password</string>
     <string name="new_password">New Password</string>
     <string name="confirm_new_password">Confirm New Password</string>

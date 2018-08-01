@@ -50,7 +50,7 @@ public class CourseSectionAdapter extends RecyclerView.Adapter<CourseSectionAdap
         }
         holder.textViewActionName.setText(courseSectionModel.getTitle());
         holder.textViewActionText.setText(courseSectionModel.getDesc());
-        holder.textViewActionTime.setText(String.format(Locale.getDefault(), "%s Mins", courseSectionModel.getTime()));
+        holder.textViewActionTime.setText(String.format(Locale.getDefault(), "%s %s", courseSectionModel.getTime(),courseSectionModel.getUnit()));
     }
 
     @Override

@@ -25,6 +25,7 @@ import com.trailaider.app.data.courses.ExerciseModel;
 import com.trailaider.app.data.model.login.LoginResponseData;
 import com.trailaider.app.ui.fragment.BaseFragment;
 import com.trailaider.app.utils.CommonUtils;
+import com.trailaider.app.utils.ConstantLib;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -148,7 +149,13 @@ public class ExerciseListFragment extends BaseFragment {
 
             public void onTick(long millisUntilFinished) {
                 miliForTImer = millisUntilFinished;
-                long total = Long.parseLong(exerciseModel.getTime())*1000;
+                long total = 0;
+                if (exerciseModel.getTime() != null && !exerciseModel.getTime().isEmpty()) {
+                    if (exerciseModel.getTime() != null && !exerciseModel.getTime().isEmpty()) {
+                        long time = Long.parseLong(exerciseModel.getTime());
+                        total = exerciseModel.getUnit().equals(ConstantLib.UNIT_MINUTE) ? time * 60 : time;
+                    }
+                }
                 long remains = total - millisUntilFinished;
                 int seconds = (int) (remains / 1000) % 60;
                 int minutes = (int) ((remains / (1000 * 60)) % 60);
@@ -175,7 +182,6 @@ public class ExerciseListFragment extends BaseFragment {
             }
         }.start();
     }
-
 
 
     @Override

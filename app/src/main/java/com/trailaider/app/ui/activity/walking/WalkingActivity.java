@@ -461,7 +461,13 @@ public class WalkingActivity extends BaseActivity {
     private void checkResult(long result) {
         if (step < totalStep) {
             CourseList courseSectionModel = courseDataMpdel.getLevel3().get(step);
-            if (result == Integer.parseInt(courseSectionModel.getTime()) * 60000) {
+            int totalTime = Integer.parseInt(courseSectionModel.getTime());
+            if (courseSectionModel.getUnit().equals(ConstantLib.UNIT_SECOND)) {
+                totalTime = totalTime * 1000;
+            } else {
+                totalTime = totalTime * 60000;
+            }
+            if (result == totalTime) {
                 timerService.stopTimer();
 
 //                    textViewActionName1.setAlpha(0.5f);

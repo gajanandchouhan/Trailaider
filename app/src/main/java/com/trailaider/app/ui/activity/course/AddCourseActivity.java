@@ -158,7 +158,10 @@ public class AddCourseActivity extends BaseActivity implements CourseView {
             editTextDuration.setError(getString(R.string.enter_trek_height));
             return;
         }
-
+        double heightInDouble = Double.parseDouble(trekHeight);
+        if (unit.equals("m")) {
+            trekHeight = String.valueOf(((int)heightInDouble * 3.2808));
+        }
         /*Bundle bundle = new Bundle();
         bundle.putString("week", getCourseDuration());
         bundle.putDouble("bmi", bmi);

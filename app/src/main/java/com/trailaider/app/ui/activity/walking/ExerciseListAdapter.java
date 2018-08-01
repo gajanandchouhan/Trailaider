@@ -63,11 +63,8 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         }
         int time = Integer.parseInt(exerciseModel.getTime() != null && !exerciseModel.getTime().isEmpty() ? exerciseModel.getTime() : "0");
         if (time > 0) {
-            holder.textViewTime.setVisibility(View.VISIBLE);
-            holder.textViewTime.setText(time < 60 ?
-                    time + " seconds" :
-                    time / 60 + " minutes");
-            holder.seekBar.setMax(time * 10);
+            int timeInSecond = exerciseModel.getUnit().equals(ConstantLib.UNIT_MINUTE) ? time * 60 : time;
+            holder.seekBar.setMax(timeInSecond * 10);
         } else {
             holder.textViewTime.setVisibility(View.GONE);
         }
