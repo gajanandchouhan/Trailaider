@@ -21,9 +21,11 @@ import com.trailaider.app.base.BaseView;
 import com.trailaider.app.data.model.trek.TrekResponseData;
 import com.trailaider.app.data.network.CheckNetworkState;
 import com.trailaider.app.data.persistance.DBHelper;
+import com.trailaider.app.ui.activity.home.MainActivity;
 import com.trailaider.app.utils.CommonUtils;
 import com.trailaider.app.utils.ConstantLib;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,12 +47,12 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     }
 
-    protected void setNotifcationClickListner(View imageView) {
+    protected void setNotifcationClickListner(final View imageView) {
         if (imageView != null) {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    CommonUtils.showToast(BaseActivity.this, "Hello");
+                    CommonUtils.showDropDownWindow(new ArrayList(),BaseActivity.this,imageView);
                 }
             });
         }

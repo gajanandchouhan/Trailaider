@@ -2,12 +2,15 @@ package com.trailaider.app.utils;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
@@ -25,14 +28,21 @@ import android.text.format.DateUtils;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.trailaider.app.GlideApp;
+import com.trailaider.app.R;
 import com.trailaider.app.ui.pickers.MyDatePicker;
 
 import java.io.ByteArrayOutputStream;
@@ -395,5 +405,42 @@ public class CommonUtils {
             e.printStackTrace();
         }
         return bmpUri;
+    }
+
+    public static void showDropDownWindow(List list, Context mContext, View view) {
+        try {
+            //We need to get the instance of the LayoutInflater, use the context of this activity
+            Dialog dialog = new Dialog(mContext);
+            LayoutInflater inflater = (LayoutInflater) mContext
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //Inflate the view from a predefined XML layout
+            View layout = inflater.inflate(R.layout.popup, null);
+            dialog.setContentView(layout);
+            dialog.getWindow().setLayout(CommonUtils.getScreenWidth(mContext) * 60 / 100, CommonUtils.getScreenHeight(mContext) / 2);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            dialog.getWindow().setGravity(Gravity.TOP | Gravity.END);
+            WindowManager.LayoutParams attributes = dialog.getWindow().getAttributes();
+            attributes.y = 50;
+            attributes.x = 50;
+            dialog.getWindow().setAttributes(attributes);
+            dialog.show();
+            /* LayoutInflater inflater = (LayoutInflater) mContext
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //Inflate the view from a predefined XML layout
+            View layout = inflater.inflate(R.layout.popup, null);
+            // create a 300px width and 470px height PopupWindow
+            PopupWindow pw = new PopupWindow(layout);
+            // display the popup in the center
+            pw.setWidth(CommonUtils.getScreenWidth(mContext) * 60 / 100);
+            pw.setHeight(CommonUtils.getScreenHeight(mContext) / 2);
+            pw.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            pw.setFocusable(true);
+            pw.setOutsideTouchable(true);
+            pw.showAsDropDown(view);*/
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
