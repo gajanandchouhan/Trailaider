@@ -13,6 +13,7 @@ import com.trailaider.app.R;
 import com.trailaider.app.data.model.trek.TrekImageModel;
 import com.trailaider.app.data.model.trek.TrekResponseData;
 import com.trailaider.app.ui.activity.BaseActivity;
+import com.trailaider.app.ui.dialog.ImageViewer;
 import com.trailaider.app.ui.dialog.SelectionListDialog;
 import com.trailaider.app.utils.CommonUtils;
 
@@ -81,7 +82,7 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
         return list.size();
     }
 
-    class ItemViewHolder extends RecyclerView.ViewHolder {
+    class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imageViewTrek;
         TextView textViewTrekName;
         TextView textViewWith;
@@ -105,6 +106,14 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
                     return true;
                 }
             });
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            List<TrekImageModel> trek_images = list.get(getAdapterPosition()).getTrek_images();
+            if (trek_images != null && trek_images.size() > 0)
+                new ImageViewer(mContext,trek_images , 0).show();
         }
     }
 
@@ -113,16 +122,16 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
             @Override
             public void onSelected(int position, String object) {
                 BaseActivity activity = (BaseActivity) mContext;
-                TrekResponseData trekResponseData=list.get(adapterPosition);
+                TrekResponseData trekResponseData = list.get(adapterPosition);
                 List<TrekImageModel> trek_images = list.get(adapterPosition).getTrek_images();
                 String image = trek_images != null && trek_images.size() > 0 ? trek_images.get(0).getTrek_image() : null;
-                StringBuilder builder=new StringBuilder();
-                builder.append("Trek Name :"+trekResponseData.getTrek_name()+"\n");
-                builder.append("Trek Duration :"+String.format("%s days", trekResponseData.getTrek_duration())+"\n");
-                builder.append("Trek Height :"+trekResponseData.getTrek_height()+"\n");
-                builder.append("Trek Type :"+trekResponseData.getTrek_type()+"\n");
-                String text= builder.toString();
-                activity.shareContent(text,image);
+                StringBuilder builder = new StringBuilder();
+                builder.append("Trek Name :" + trekResponseData.getTrek_name() + "\n");
+                builder.append("Trek Duration :" + String.format("%s days", trekResponseData.getTrek_duration()) + "\n");
+                builder.append("Trek Height :" + trekResponseData.getTrek_height() + "\n");
+                builder.append("Trek Type :" + trekResponseData.getTrek_type() + "\n");
+                String text = builder.toString();
+                activity.shareContent(text, image);
             }
         }).show();
     }

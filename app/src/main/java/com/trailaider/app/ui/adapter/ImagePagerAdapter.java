@@ -43,6 +43,11 @@ public class ImagePagerAdapter extends PagerAdapter {
             GlideApp.with(viewById.getContext()).
                     load(model.getReview_image()).placeholder(R.drawable.placeholder).
                     into((viewById));
+        }else if (o instanceof TrekImageModel){
+            TrekImageModel model = (TrekImageModel) o;
+            GlideApp.with(viewById.getContext()).
+                    load(model.getTrek_image()).placeholder(R.drawable.placeholder).
+                    into((viewById));
         }
         collection.addView(layout);
         return layout;

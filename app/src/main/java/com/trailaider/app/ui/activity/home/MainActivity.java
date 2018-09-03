@@ -96,6 +96,7 @@ public class MainActivity extends BaseActivity implements DrawerAdapter.DrawerCl
         setupViewPager(pager);
         tabLayout.setupWithViewPager(pager);
         changeTabsFont();
+        setNotifcationClickListner(findViewById(R.id.image_view_notification));
     }
 
     private void setupViewPager(ViewPager pager) {

@@ -14,7 +14,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
+import com.trailaider.app.R;
 import com.trailaider.app.base.BaseView;
 import com.trailaider.app.data.model.trek.TrekResponseData;
 import com.trailaider.app.data.network.CheckNetworkState;
@@ -40,6 +42,18 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
+
+    }
+
+    protected void setNotifcationClickListner(View imageView) {
+        if (imageView != null) {
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    CommonUtils.showToast(BaseActivity.this, "Hello");
+                }
+            });
+        }
     }
 
     public abstract void initializePresneter();
@@ -74,7 +88,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     public void shareContent(String text, String image) {
         if (CommonUtils.hasPermissions(this, ConstantLib.PERMISSION_IMAGE_PICK)) {
             CommonUtils.shareImageAndText(this, text, image);
-        }else{
+        } else {
             ActivityCompat.requestPermissions(this, ConstantLib.PERMISSION_IMAGE_PICK, 1);
         }
     }
