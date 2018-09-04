@@ -23,6 +23,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.Base64;
@@ -43,6 +45,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.trailaider.app.GlideApp;
 import com.trailaider.app.R;
+import com.trailaider.app.ui.adapter.ListItemAdapter;
 import com.trailaider.app.ui.pickers.MyDatePicker;
 
 import java.io.ByteArrayOutputStream;
@@ -415,6 +418,9 @@ public class CommonUtils {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             //Inflate the view from a predefined XML layout
             View layout = inflater.inflate(R.layout.popup, null);
+            RecyclerView recyclerView= (RecyclerView) layout;
+            recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+            recyclerView.setAdapter(new ListItemAdapter(mContext,list));
             dialog.setContentView(layout);
             dialog.getWindow().setLayout(CommonUtils.getScreenWidth(mContext) * 60 / 100, CommonUtils.getScreenHeight(mContext) / 2);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));

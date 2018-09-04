@@ -155,7 +155,7 @@ public class AddCourseActivity extends BaseActivity implements CourseView {
             return;
         }
         if (trekHeight.isEmpty()) {
-            editTextDuration.setError(getString(R.string.enter_trek_height));
+            editTextTrekHeight.setError(getString(R.string.enter_trek_height));
             return;
         }
         double heightInDouble = Double.parseDouble(trekHeight);

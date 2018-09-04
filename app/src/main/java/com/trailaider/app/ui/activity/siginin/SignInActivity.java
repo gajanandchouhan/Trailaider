@@ -60,8 +60,6 @@ public class SignInActivity extends BaseActivity implements GoogleApiClient.OnCo
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 //
-        editTextEmail.setText("9753788166");
-        editTextPassword.setText("123456");
     }
 
     @Override
