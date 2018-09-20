@@ -214,9 +214,10 @@ public class AddTrekActivity extends BaseActivity implements AddTrekView {
         builder.addFormDataPart("user_id", loginData.getId());
         builder.addFormDataPart("trek_name", name);
         builder.addFormDataPart("trek_type", trekType);
+        builder.addFormDataPart("trek_unit", loginData.getUnit());
 //        builder.addFormDataPart("rating", String.valueOf(rating));
         builder.addFormDataPart("trek_duration", trekDuration.replace(" Days", ""));
-        builder.addFormDataPart("trek_height", trekHeight + " " + unit);
+        builder.addFormDataPart("trek_height", trekHeight);
         for (int i = 0; i < list.size(); i++) {
             try {
                 if (list.get(i) != null) {

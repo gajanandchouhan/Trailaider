@@ -216,7 +216,7 @@ We may provide your information to TRAILAIDER, PRIVATE LIMITED. companies and af
 SERVICE PROVIDERS
 We may transfer your information to TRAILAIDER Family service providers to conduct our business. For example, they may handle credit card processing, shipping, data management, email distribution, market research, information analysis, and promotions management. We may also share your information to administer features.
 BY LAW OR TO PROTECT RIGHTS
-We may disclose information upon governmental request, in response to a court order, when required by law, to enforce our policies, or to protect our or others\' rights, property or safety. We may share information to prevent illegal uses of TRAILAIDER's products and services or violations of the Terms of Use, or to defend ourselves against third-party claims. We may also share information with companies assisting in fraud protection or investigation.
+We may disclose information upon governmental request, in response to a court order, when required by law, to enforce our policies, or to protect our or others\' rights, property or safety. We may share information to prevent illegal uses of TRAILAIDER\'s products and services or violations of the Terms of Use, or to defend ourselves against third-party claims. We may also share information with companies assisting in fraud protection or investigation.
 BUSINESS TRANSFERS
 Your information may be transferred to a third party as a part of our business assets in a sale of a part or all of TRAILAIDER. If this should happen, notice will be provided by posting to the website or other form of communication.
 PUBLIC SHARING
@@ -254,7 +254,7 @@ For questions or concerns, please contact TRAILAIDER Consumer Services/Privacy,.
     <string name="friend_social">Friends (social)</string>
     <string name="text_friend">Everyone on Trailaider can search for you, view your limited profile (including your aggregate activity data) and send you a friend request. Only your friends an view your profile can see your full profile and see your shared activity in the feed. See More</string>
     <string name="only_me">Only Me (Private)</string>
-    <string name="text_only_me">Nobody on Trailaider can search for you, view your profile or view your activity. You will not be able to add friendsor engage in social activity. \n\nFriends Tagging (Allow/Don’t Allow) Allow Friend tagging so your friends on Trailaider can tag you in their posts in the review section and in Trek Photos.</string>
+    <string name="text_only_me">Nobody on Trailaider can search for you, view your profile or view your activity. You will not be able to add friendsor engage in social activity. </string><!--\n\nFriends Tagging (Allow/Don’t Allow) Allow Friend tagging so your friends on Trailaider can tag you in their posts in the review section and in Trek Photos.-->
     <string name="registered_email_to_restore_password">Registered email to restore password</string>
     <string name="new_password">New Password</string>
     <string name="confirm_new_password">Confirm New Password</string>

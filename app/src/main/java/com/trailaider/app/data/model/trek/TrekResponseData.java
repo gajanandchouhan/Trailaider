@@ -28,6 +28,7 @@ public class TrekResponseData {
     private String trek_status;
     private String created_at;
     private String updated_at;
+    private String trek_unit;
     @ToMany(referencedJoinProperty = "trek_image_id")
     private List<TrekImageModel> trek_images;
     /** Used to resolve relations */
@@ -36,11 +37,11 @@ public class TrekResponseData {
     /** Used for active entity operations. */
     @Generated(hash = 1684948043)
     private transient TrekResponseDataDao myDao;
-    @Generated(hash = 1306377323)
-    public TrekResponseData(Long localId, String trek_id, String user_id,
-            String trek_name, String trek_type, String trek_duration,
-            String trek_height, String latitude, String longitude, String address,
-            String trek_status, String created_at, String updated_at) {
+    @Generated(hash = 856207612)
+    public TrekResponseData(Long localId, String trek_id, String user_id, String trek_name,
+            String trek_type, String trek_duration, String trek_height, String latitude,
+            String longitude, String address, String trek_status, String created_at, String updated_at,
+            String trek_unit) {
         this.localId = localId;
         this.trek_id = trek_id;
         this.user_id = user_id;
@@ -54,6 +55,7 @@ public class TrekResponseData {
         this.trek_status = trek_status;
         this.created_at = created_at;
         this.updated_at = updated_at;
+        this.trek_unit = trek_unit;
     }
     @Generated(hash = 1755300595)
     public TrekResponseData() {
@@ -201,6 +203,12 @@ public class TrekResponseData {
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getTrekResponseDataDao() : null;
+    }
+    public String getTrek_unit() {
+        return this.trek_unit;
+    }
+    public void setTrek_unit(String trek_unit) {
+        this.trek_unit = trek_unit;
     }
 
 }

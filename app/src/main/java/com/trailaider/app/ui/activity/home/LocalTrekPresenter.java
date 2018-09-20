@@ -85,6 +85,7 @@ public class LocalTrekPresenter extends BasePresenter<AddTrekView> {
 //        builder.addFormDataPart("rating", String.valueOf(rating));
             builder.addFormDataPart("trek_duration", trekResponseData.getTrek_duration());
             builder.addFormDataPart("trek_height", trekResponseData.getTrek_height());
+            builder.addFormDataPart("trek_unit", trekResponseData.getTrek_unit());
             List<TrekImageModel> trek_images = trekResponseData.getTrek_images();
             for (TrekImageModel trek_image : trek_images) {
                 File file = new File(trek_image.getTrek_image());

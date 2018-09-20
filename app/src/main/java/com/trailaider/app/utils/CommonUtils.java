@@ -418,9 +418,9 @@ public class CommonUtils {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             //Inflate the view from a predefined XML layout
             View layout = inflater.inflate(R.layout.popup, null);
-            RecyclerView recyclerView= (RecyclerView) layout;
+            RecyclerView recyclerView = (RecyclerView) layout;
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-            recyclerView.setAdapter(new ListItemAdapter(mContext,list));
+            recyclerView.setAdapter(new ListItemAdapter(mContext, list));
             dialog.setContentView(layout);
             dialog.getWindow().setLayout(CommonUtils.getScreenWidth(mContext) * 60 / 100, CommonUtils.getScreenHeight(mContext) / 2);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
@@ -448,5 +448,27 @@ public class CommonUtils {
             e.printStackTrace();
         }
 
+    }
+
+    public static String convertMeterToFeet(String trek_height) {
+        try {
+            double height = Double.parseDouble(trek_height);
+            double heightInMeter = height / 3.28084;
+            return String.format(Locale.getDefault(), "%.2f", heightInMeter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String conVertFeetToMeter(String trek_height) {
+        try {
+            double height = Double.parseDouble(trek_height);
+            double heightInMeter = height * 0.3048;
+            return String.format(Locale.getDefault(), "%.2f", heightInMeter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

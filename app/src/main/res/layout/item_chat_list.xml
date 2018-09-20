@@ -26,6 +26,7 @@
             android:layout_marginLeft="@dimen/_10dp"
             android:padding="@dimen/_10dp"
             android:text="Message"
+            android:textIsSelectable="true"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_14sp" />
 

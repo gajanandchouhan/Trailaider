@@ -25,6 +25,7 @@
         android:layout_marginLeft="@dimen/_10dp"
         android:layout_marginRight="@dimen/_10dp"
         android:padding="@dimen/_10dp"
+        android:textIsSelectable="true"
         android:background="@drawable/chat_bg"
         android:text="Message"
         android:textColor="@color/colorWhite"

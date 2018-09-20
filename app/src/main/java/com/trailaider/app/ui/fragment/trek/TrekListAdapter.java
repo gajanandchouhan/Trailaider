@@ -10,12 +10,15 @@ import android.widget.TextView;
 
 import com.trailaider.app.GlideApp;
 import com.trailaider.app.R;
+import com.trailaider.app.data.model.login.LoginResponseData;
 import com.trailaider.app.data.model.trek.TrekImageModel;
 import com.trailaider.app.data.model.trek.TrekResponseData;
+import com.trailaider.app.data.persistance.TrailaiderPreferences;
 import com.trailaider.app.ui.activity.BaseActivity;
 import com.trailaider.app.ui.dialog.ImageViewer;
 import com.trailaider.app.ui.dialog.SelectionListDialog;
 import com.trailaider.app.utils.CommonUtils;
+import com.trailaider.app.utils.ConstantLib;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,7 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
 
     private final Context mContext;
     private final List<TrekResponseData> list;
+    private final LoginResponseData loginData;
     private List<String> optionList;
 
     public TrekListAdapter(Context mContext, List<TrekResponseData> list) {
@@ -36,6 +40,7 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
         this.list = list;
         optionList = new ArrayList<>();
         optionList.add("Share");
+        loginData = TrailaiderPreferences.getInstance().getLoginData();
     }
 
     @Override
@@ -49,7 +54,19 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         TrekResponseData trekResponseData = list.get(position);
         holder.textViewDays.setText(String.format("%s days", trekResponseData.getTrek_duration()));
-        holder.textViewHeight.setText(trekResponseData.getTrek_height());
+        String trek_unit = trekResponseData.getTrek_unit();
+        String height = "";
+        if (trek_unit != null && !trek_unit.isEmpty()) {
+            if (!trek_unit.equalsIgnoreCase(loginData.getUnit())) {
+                if (loginData.getUnit().equalsIgnoreCase(ConstantLib.UNIT_IMPERIAL)) {
+                    height = CommonUtils.convertMeterToFeet(trekResponseData.getTrek_height())+" ft";
+                } else {
+                    height = CommonUtils.conVertFeetToMeter(trekResponseData.getTrek_height())+" m";
+                }
+            }
+
+        }
+        holder.textViewHeight.setText(height);
         holder.textViewTrekName.setText(trekResponseData.getTrek_name());
         holder.textViewWith.setText(trekResponseData.getTrek_type());
         switch (trekResponseData.getTrek_status()) {
@@ -113,7 +130,7 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
         public void onClick(View view) {
             List<TrekImageModel> trek_images = list.get(getAdapterPosition()).getTrek_images();
             if (trek_images != null && trek_images.size() > 0)
-                new ImageViewer(mContext,trek_images , 0).show();
+                new ImageViewer(mContext, trek_images, 0).show();
         }
     }
 
@@ -125,10 +142,22 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
                 TrekResponseData trekResponseData = list.get(adapterPosition);
                 List<TrekImageModel> trek_images = list.get(adapterPosition).getTrek_images();
                 String image = trek_images != null && trek_images.size() > 0 ? trek_images.get(0).getTrek_image() : null;
+                String trek_unit = trekResponseData.getTrek_unit();
+                String height = "";
+                if (trek_unit != null && !trek_unit.isEmpty()) {
+                    if (!trek_unit.equalsIgnoreCase(loginData.getUnit())) {
+                        if (loginData.getUnit().equalsIgnoreCase(ConstantLib.UNIT_IMPERIAL)) {
+                            height = CommonUtils.convertMeterToFeet(trekResponseData.getTrek_height())+" ft";
+                        } else {
+                            height = CommonUtils.conVertFeetToMeter(trekResponseData.getTrek_height())+" m";
+                        }
+                    }
+
+                }
                 StringBuilder builder = new StringBuilder();
                 builder.append("Trek Name :" + trekResponseData.getTrek_name() + "\n");
                 builder.append("Trek Duration :" + String.format("%s days", trekResponseData.getTrek_duration()) + "\n");
-                builder.append("Trek Height :" + trekResponseData.getTrek_height() + "\n");
+                builder.append("Trek Height :" + height + "\n");
                 builder.append("Trek Type :" + trekResponseData.getTrek_type() + "\n");
                 String text = builder.toString();
                 activity.shareContent(text, image);
