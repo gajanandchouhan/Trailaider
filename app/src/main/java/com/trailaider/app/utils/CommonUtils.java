@@ -453,7 +453,7 @@ public class CommonUtils {
     public static String convertMeterToFeet(String trek_height) {
         try {
             double height = Double.parseDouble(trek_height);
-            double heightInMeter = height / 3.28084;
+            double heightInMeter = height * 3.28084;
             return String.format(Locale.getDefault(), "%.2f", heightInMeter);
         } catch (Exception e) {
             e.printStackTrace();

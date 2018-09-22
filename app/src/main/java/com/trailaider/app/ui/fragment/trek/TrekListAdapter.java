@@ -64,7 +64,14 @@ public class TrekListAdapter extends RecyclerView.Adapter<TrekListAdapter.ItemVi
                     height = CommonUtils.conVertFeetToMeter(trekResponseData.getTrek_height())+" m";
                 }
             }
+            else{
+                if (loginData.getUnit().equalsIgnoreCase(ConstantLib.UNIT_IMPERIAL)) {
+                    height=trekResponseData.getTrek_height()+" ft";
+                }else{
+                    height=trekResponseData.getTrek_height()+" m";
+                }
 
+            }
         }
         holder.textViewHeight.setText(height);
         holder.textViewTrekName.setText(trekResponseData.getTrek_name());

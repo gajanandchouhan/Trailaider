@@ -369,8 +369,8 @@ public class ProfileActivity extends BaseActivity implements ProfileView {
         TrailaiderPreferences.getInstance().saveLoginData(data);
         TrailaiderPreferences.getInstance().setProfileVisited(true);
         setUpView();
-        if (!fromSlider)
-            CommonUtils.startActivity(this, MainActivity.class);
+        //if (!fromSlider)
+            CommonUtils.startActivity(this, MainActivity.class,null,true);
         finish();
     }
 }
