@@ -42,9 +42,11 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.SettingsClient;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.maps.android.SphericalUtil;
 import com.trailaider.app.R;
 import com.trailaider.app.data.CourseAPiDays;
 import com.trailaider.app.data.CourseList;
@@ -99,7 +101,8 @@ public class WalkingActivity extends BaseActivity {
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationRequest mLocationRequest;
     private LocationCallback mLocationCallback;
-    List<Location> locationList;
+    //List<Location> locationList;
+    List<LatLng> locationList;
     private DecimalFormat decimalFormat;
     private TextView textViewSpeed;
     private CourseAPiDays courseDataMpdel;
@@ -190,13 +193,15 @@ public class WalkingActivity extends BaseActivity {
                 for (Location location : locationResult.getLocations()) {
                     // Update UI with location data
                     // ...
-
+                    LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                     Log.v("Location", location.getLatitude() + " , " + location.getLongitude() + ", " + location.getSpeed());
                     speed = (double) ((location.getSpeed() * 3600) / 1000);
+                    locationList.add(latLng);
 
                 }
-                locationList.addAll(locationResult.getLocations());
-                double distanceInM = CommonUtils.computeLength(locationList);
+                //locationList.addAll(locationResult.getLocations());
+                //  double distanceInM = CommonUtils.computeLength(locationList);
+                double distanceInM = CommonUtils.computeLength2(locationList);
                 textViewDistance.setText(String.format("%s m", decimalFormat.format(distanceInM)));
                 textViewSpeed.setText(String.format("%s Km/h", decimalFormat.format(speed)));
             }

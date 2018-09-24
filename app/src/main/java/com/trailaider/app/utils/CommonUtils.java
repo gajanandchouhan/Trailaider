@@ -43,6 +43,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.maps.android.SphericalUtil;
 import com.trailaider.app.GlideApp;
 import com.trailaider.app.R;
 import com.trailaider.app.ui.adapter.ListItemAdapter;
@@ -325,6 +327,22 @@ public class CommonUtils {
     }
 
 
+    /**
+     * Returns the length of the given path, in meters, on Earth.
+     */
+    public static double computeLength2(List<LatLng> path) {
+        if (path.size() < 2) {
+            return 0;
+        }
+        double length = 0;
+        LatLng prev = path.get(0);
+        for (LatLng location : path) {
+            length=length+SphericalUtil.computeDistanceBetween(prev,location);
+            prev = location;
+        }
+
+        return length;
+    }
     /**
      * Returns the length of the given path, in meters, on Earth.
      */
